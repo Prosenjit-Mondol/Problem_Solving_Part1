@@ -14,7 +14,7 @@ void solve(void)
     if(d<ma)
     cout<<"Impossible"<<'\n';
     
-    if((a+b+c)%2==0)
+    else if((a+b+c)%2==0)
     {
         ll x,y,z;
         x=(a+b-c)/2;
