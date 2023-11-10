@@ -9,20 +9,22 @@ using ll=long long ;
 
 void solve(void)
 {
-   int n;
-		cin >> n;
-		vector<int> a(2 * n);
-		for (auto &it : a) cin >> it;
-		vector<int> used(n);
-		vector<int> p;
-		for (int i = 0; i < 2 * n; ++i) {
-			if (!used[a[i] - 1]) {
-				used[a[i] - 1] = true;
-				p.push_back(a[i]);
-			}
-		}
-		for (auto it : p) cout << it << " ";
-		cout << endl;
+    ll n;
+    cin>>n;
+    vector<int>v;
+    for(int i=0;i<n;i++)
+    {
+    int x;
+    cin>>x;
+    v.push_back(x);
+    }
+    ll c=0;
+    for (int i = 0; i < n; i++)
+    {
+        if(i!=v[i])
+        c++;
+    }
+    cout<<c<<'\n';
 }
 
 
@@ -32,7 +34,8 @@ ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
   ll t;
-  cin>>t;
+  t=1;
+  //cin>>t;
     while(t--)
      {
        solve();
