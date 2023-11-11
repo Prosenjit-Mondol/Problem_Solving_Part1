@@ -9,10 +9,12 @@ int main()
     {
         string s;
         cin>>s;
+
         if(freq[s]==0)
             cout<<"OK"<<endl;
         else
-            cout<<s<<freq[s]<<endl;
+            cout<<s<<freq[s]+1<<endl;
+
         freq[s]++;
     }
 }
