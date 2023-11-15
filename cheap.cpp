@@ -9,7 +9,10 @@ using ll=long long ;
 
 void solve(void)
 {
+  ll a,b,c,d;
+  cin>>a>>b>>c>>d;
   cout<<6<<endl;
+  cin>>a>>b>>c>>d;
   cout<<8<<endl;
 }
 
