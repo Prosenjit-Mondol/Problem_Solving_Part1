@@ -13,7 +13,7 @@ int main()
         if(freq[s]==0)
             cout<<"OK"<<endl;
         else
-            cout<<s<<freq[s]+1<<endl;
+            cout<<s<<freq[s]<<endl;
 
         freq[s]++;
     }

@@ -9,11 +9,23 @@ using ll=long long ;
 
 void solve(void)
 {
-  ll a,b,c,d;
-  cin>>a>>b>>c>>d;
-  cout<<6<<endl;
-  // cin>>a>>b>>c>>d;
-  // cout<<8<<endl;
+    int n;
+    cin>>n;
+    ll sum=0;
+    vector<int>v;
+    for(int i=0;i<n;i++)
+    {
+    int x;
+    cin>>x;
+    v.push_back(x);
+    sum+=(x);
+    }
+    if(sum>n)
+    cout<<(sum-n)<<'\n';
+    else if(sum<n)
+    cout<<1<<'\n';
+    else
+    cout<<0<<'\n';
 }
 
 
@@ -23,8 +35,7 @@ ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
   ll t;
-  t=1;
-  //cin>>t;
+  cin>>t;
     while(t--)
      {
        solve();
