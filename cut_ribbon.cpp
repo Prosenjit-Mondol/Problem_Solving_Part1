@@ -1,7 +1,4 @@
 #include<bits/stdc++.h>
-#include<tuple>
-#include<utility>
-#include<algorithm>
 #define vi vector<int>v
 #define pi pair<int,int>
 using namespace std;
@@ -9,17 +6,23 @@ using ll=long long ;
 
 void solve(void)
 {
-    ll t=0,n,a,b,c;
+    ll t,n,a,b,c;
     cin>>n>>a>>b>>c;
-    if(n==a||n==b||n==c)
-    t++;
-    if(n==(a+b))
-    t++;
-    if(n==(a+c))
-    t++;
-    if(n==(c+b))
-    t++;
-    cout<<t<<'\n';
+    ll ma=0,x,y,z;
+    for (x=0;x*a<=n;x++)
+    {
+      for (y=0;(y*b+x*a)<=n;y++)
+      {
+        t=n-(y*b+x*a);
+        if(t%c==0){
+        z=t/c;
+        ma=max(ma,x+y+z);
+        }
+      }
+      
+    }
+    
+    cout<<ma<<'\n';
 }
 
 
