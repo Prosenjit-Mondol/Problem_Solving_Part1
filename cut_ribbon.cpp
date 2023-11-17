@@ -9,23 +9,20 @@ using ll=long long ;
 
 void solve(void)
 {
-  ll sum=0,n,m,a,b;
-  cin>>n>>m>>a>>b;
-  if(m*a>b){
-    int r=n/m;
-    sum+=(r*b);
-    r=n-(r*m);
-    if((r*a)<b)
-    sum+=(r*a);
-    else
-    sum+=b;
-    cout<<sum<<'\n';
-  }
-  else
-  {
-    cout<<(n*a)<<'\n';
-  }
+    ll t=0,n,a,b,c;
+    cin>>n>>a>>b>>c;
+    if(n==a||n==b||n==c)
+    t++;
+    if(n==(a+b))
+    t++;
+    if(n==(a+c))
+    t++;
+    if(n==(c+b))
+    t++;
+    cout<<t<<'\n';
 }
+
+
 int main()
 {
 ios_base::sync_with_stdio(false);
