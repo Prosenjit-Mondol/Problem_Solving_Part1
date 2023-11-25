@@ -9,35 +9,34 @@ using ll=long long ;
 
 void solve(void)
 {
-    ll sum=0,n,c=0;
+    int n;
     cin>>n;
-    map<int,int>mp;
-    string s;
-    cin>>s;
-    while(1)
+    string x;
+    cin>>x;
+    int p=-1,b=0,cnt=0,e=-1;
+    for(int i=0;i<n;i++)
     {
-        c=0;
-    for (int i = 0; i < n-1; i++)
-    {
-        if(mp[i]==1)
-        {
-            continue;
-        }
-        else if(s[i]=='A'&&s[i+1]=='B')
-        {
-            c=1;
-            mp[i]=1;
-            sum++;
-            s[i]='B';
-            s[i+1]='A';
-        }
+       if(x[i]=='A')
+       {
+         p=i;
+         break;
+       }
     }
-    if(c==0){
-        break;
-    }
-    }
-    cout<<sum<<'\n';
-    
+   for(int i=n-1;i>=0;i--)
+   {
+      if(x[i]=='B')
+      {
+          e=i;
+          break;
+      }
+   }
+  
+  if(p ==-1 || e==-1 || p>e)
+  {
+    cout<<0<<'\n';
+    return;
+  }
+  cout<<e-p<<'\n';
 }
 
 
