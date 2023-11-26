@@ -10,7 +10,8 @@
         "string_view": "cpp",
         "vector": "cpp",
         "valarray": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "format": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

@@ -23,7 +23,6 @@ void solve(void)
             }
             if(s>n || p>m)
             break;
-            
         }
     }
     cout<<sum<<'\n';

@@ -1,4 +1,7 @@
 #include<bits/stdc++.h>
+#include<tuple>
+#include<utility>
+#include<algorithm>
 #define vi vector<int>v
 #define pi pair<int,int>
 using namespace std;
@@ -6,25 +9,23 @@ using ll=long long ;
 
 void solve(void)
 {
-    int sum=0,c=0,n;
-    cin>>n;
-    string s;
-    cin>>s;
-    for (int i = 0; i <n; i++)
+    
+    for (int i = 0; i <8; i++)
     {
-        if(s[i]=='.')
+        string s,r;
+        int k=0;
+        cin>>s;
+        for (int j= 0;j<8; j++)
         {
-            if(s[i]=='.'&&s[i+1]=='.'&&s[i+2]=='.')
+            if(s[j]>='a'&& s[j]<='z')
             {
-              c=1;
+                cout<<s[j];
+                r[k]=s[j];
+                k++;
             }
-            sum++;
         }
     }
-    if(c==1)
-    cout<<2<<'\n';
-    else
-    cout<<sum<<'\n';
+    cout<<'\n';
 }
 
 
