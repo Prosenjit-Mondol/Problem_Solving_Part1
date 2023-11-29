@@ -11,7 +11,9 @@
         "vector": "cpp",
         "valarray": "cpp",
         "random": "cpp",
-        "format": "cpp"
+        "format": "cpp",
+        "bitset": "cpp",
+        "set": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
