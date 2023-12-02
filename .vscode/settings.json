@@ -13,7 +13,8 @@
         "random": "cpp",
         "format": "cpp",
         "bitset": "cpp",
-        "set": "cpp"
+        "set": "cpp",
+        "iomanip": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
