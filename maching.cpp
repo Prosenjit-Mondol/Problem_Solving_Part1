@@ -15,21 +15,12 @@ void solve(void)
     cin>>x;
     v.push_back(x);
     }
-    vector<int>v2;
-    v2=v;
-    sort(v2.begin(),v2.end());
-    int in,c=v[0];
-    for (int i = 0; i <10; i++)
+    int c=v[0];
+    for (int i = 0; i <2; i++)
     {
-        if(c==v2[i])
-        {
-            in=i;
-        }
+        c=v[c];
     }
-    if(in==1)
     cout<<c<<'\n';
-    else
-    cout<<v2[in-2]<<'\n';
 }
 
 

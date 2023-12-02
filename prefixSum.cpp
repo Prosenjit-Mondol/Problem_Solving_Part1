@@ -11,14 +11,14 @@ void solve(void)
     ll y=0,re=0,n,t;
     cin>>n>>t;
 
-    vector<int>v;
+    vector<ll>v;
     for(int i=0;i<n;i++)
     {
     int x;
     cin>>x;
     v.push_back(x);
     }
-    vector<int>vvv;
+    vector<ll>vvv;
     for(int i=0;i<n;i++)
     {
     y+=v[i];

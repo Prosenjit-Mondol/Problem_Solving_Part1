@@ -8,10 +8,10 @@ using ll=unsigned long long ;
 
 void solve(void)
 {
-    int n;
+    long double n;
     cin>>n;
-    double re=1<<n;
-    cout<<re<<'\n';
+    n=pow(2,n);
+    cout<<n<<'\n';
 }
 
 
