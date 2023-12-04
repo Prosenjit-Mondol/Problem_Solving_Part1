@@ -1,4 +1,3 @@
-
 #include<bits/stdc++.h>
 #include<tuple>
 #include<utility>
@@ -9,12 +8,21 @@ using ll=unsigned long long ;
 
 void solve(void)
 {
-    double num=61803398874989484820458683436563811772030917980576;
-    //cin>>num;
-    ostringstream str1;
-    str1 << num;
-    string geek = str1.str();
-    cout<<geek;
+    int n;
+    cin>>n;
+    string s;
+    cin>>s;
+    for (int i = 0; i < n; i++)
+    {
+        if(s[i]=='0')
+        {
+            cout<<"YES"<<'\n';
+            return;
+        }
+    }
+    
+    cout<<"NO"<<'\n';
+    
 }
 
 
@@ -24,7 +32,7 @@ ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
   ll t=1;
-  //cin>>t;
+  cin>>t;
     while(t--)
      {
        solve();

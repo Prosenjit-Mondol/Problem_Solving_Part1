@@ -39,13 +39,13 @@ string subtract(string a,string b) {
 
 void solve(void)
 {
-    string re,a,b;
+    string a,b;
     cin>>a>>b;
     if (a.size() > b.size() || (a.size() == b.size() && a > b)) {
         std::swap(a, b);
     }
 
-    re=gcd(a,b);
+    string re=gcd(a,b);
     cout<<re<<'\n';
 }
 

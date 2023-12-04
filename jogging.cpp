@@ -8,34 +8,32 @@ void solve(void)
     ll a,b,c,d,e,f,x;
     cin>>a>>b>>c>>d>>e>>f>>x;
     ll aoki=0,taka=0;
-    ll c_time=0;
+    ll c_time=x;
 
-    while (c_time<=x)
+    while (true)
     {
       taka+=(a*b);
-      c_time+=a;
-
-      if(c_time>=x)
+      cout<<taka<<" ";
+      c_time-=a;
+      if (c_time)
       {
         break;
       }
-
-      c_time+=c;
+      c_time-=c;
+      
     }
-
-    c_time=0;
-
-    while (c_time<=x)
+    c_time=x;
+    while (true)
     {
       aoki+=(d*e);
-      c_time+=d;
-
-      if (c_time>=x)
+      cout<<aoki<<" ";
+      c_time-=d;
+      if (c_time>x)
       {
         break;
       }
-
-      c_time+=f;
+      c_time-=f;
+      
     }
 
     if(taka>aoki)
