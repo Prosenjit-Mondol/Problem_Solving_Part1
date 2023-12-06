@@ -8,38 +8,26 @@ using ll=unsigned long long ;
 
 void solve(void)
 {
-    ll n,p,l,t,c=1;
+    ll n,p,l,t,k=0;
     cin>>n>>p>>l>>t;
-    if (n==1)
-    {
-        cout<<0<<'\n';
-        return;
-    }
     ll rp=(n-1)/7+1;
     
-    rp=rp*t+l;
+    rp=(n+6)/7;
     
-    if(rp>=p)
+    while (1)
     {
-        cout<<(n-1)<<'\n';
-    }
-    else
-    {
-        ll pr=rp;
-        rp=p-rp;
-        ll r=rp/l;
-        ll v=r*l+pr;
-        if (v==p)
+        ll x=k*l+min(rp,2*k)*t;
+        if (x>=p)
         {
-            cout<<(n-r-1)<<'\n';
-        }
-        else if(v>p)
-        {
-            cout<<(n-r-1)<<'\n';
+            break;
         }
         else
-        cout<<(n-r-2)<<'\n';
+        {
+            k++;
+        }
+        
     }
+    cout<<(n-k)<<'\n';
 }
 
 

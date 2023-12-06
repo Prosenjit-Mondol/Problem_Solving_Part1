@@ -8,20 +8,55 @@ using ll=unsigned long long ;
 
 void solve(void)
 {
-    string s;
-    cin>>s;
-    
-    //
-    vector<char>r;
-    vector<char>::iterator it;
-    it=r.begin();
-    r.push_back(s[0]);
-    r.push_back(s[2]);
-    r.push_back(s[4]);
-    r.push_back(s[6]);
-    r.push_back(s[8]);
-    r.erase(it,it+1);
-    cout<<r[0]<<r[2];
+   string s;
+   cin>>s;
+   int up=0,low=0.upc=0,lowc=0;
+   stack<int>q,p;
+   for (int  i = 0; i<s.length(); i++)
+   {
+     if (s[i] == 'B')
+          {
+               if (upc > 0)
+               {
+                    upc--;
+                    int p = qup.top();
+                    s[p] = '*';
+                    qup.pop();
+               }
+               continue;
+          }
+          else if (s[i] == 'b')
+          {
+               if (lowc > 0)
+               {
+                    lowc--;
+                    int p = qlow.top();
+                    s[p] = '*';
+                    qlow.pop();
+               }
+               continue;
+          }
+
+          if (s[i] >= 'a' and s[i] <= 'z')
+          {
+               qlow.push(i);
+               lowc++;
+          }
+          else
+          {
+               qup.push(i);
+               upc++;
+          }
+     }
+     for (auto u : s)
+     {
+          if (u == '*' or u == 'B' or u == 'b')
+               continue;
+          cout << u;
+     }
+     cout << '\n';
+   }
+   
 }
 
 

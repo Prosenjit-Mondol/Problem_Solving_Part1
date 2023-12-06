@@ -1,73 +1,70 @@
-#include<bits/stdc++.h>
-#include<tuple>
-#include<utility>
-#include<algorithm>
+#include <bits/stdc++.h>
 using namespace std;
-const int inf = 3e5;
-using ll=unsigned long long ;
+using ll = long long;
 
-void solve(void)
+void Solve()
 {
-    string s;
-    cin>>s;
+     string s;
+     cin >> s;
+     int up = 0, low = 0, upc = 0, lowc = 0;
+     stack<int> qup, qlow;
 
-    vector<char>r;
-    vector<char>::iterator it;
-    it=r.begin();
-    for (int i = 0; i < s.length(); i++)
-    {
-        
-        if(s[i]=='B' || s[i]=='b')
-        {
-            
-            if (s[i]=='B')
-            {
-                for (int i =r.size()-1; i>=0; i--)
-                {
-                    if (r[i]>='A'||r[i]<='Z')
-                    {
-                        r.erase(it+i,it+i+1);
-                    }
-                }
-            }
-            else
-            {
-                for (int i =r.size()-1; i>=0; i--)
-                {
-                    if (r[i]>='a'||r[i]<='z')
-                    {
-                        r.erase(it+i,it+i+1);
-                    }
-                    
-                }
-            }
-            
-            
-        }
-        else
-        {
-            r.push_back(s[i]);
-        }
-    }
+     for (int i = 0; i < (int)s.size(); i++)
+     {
+          if (s[i] == 'B')
+          {
+               if (upc > 0)
+               {
+                    upc--;
+                    int p = qup.top();
+                    s[p] = '*';
+                    qup.pop();
+               }
+               continue;
+          }
+          else if (s[i] == 'b')
+          {
+               if (lowc > 0)
+               {
+                    lowc--;
+                    int p = qlow.top();
+                    s[p] = '*';
+                    qlow.pop();
+               }
+               continue;
+          }
 
-    for(auto element : r)
-    {
-    cout<<element;
-    }
-
+          if (s[i] >= 'a' and s[i] <= 'z')
+          {
+               qlow.push(i);
+               lowc++;
+          }
+          else
+          {
+               qup.push(i);
+               upc++;
+          }
+     }
+     for (auto u : s)
+     {
+          if (u == '*' or u == 'B' or u == 'b')
+               continue;
+          cout << u;
+     }
+     cout << '\n';
 }
-
 
 int main()
 {
-ios_base::sync_with_stdio(false);
-cin.tie(NULL);
-
-  ll t=1;
-  cin>>t;
-    while(t--)
+     ios_base::sync_with_stdio(false);
+     cin.tie(NULL);
+     int tests = 1;
+     cin >> tests;
+     while (tests--)
      {
-       solve();
+          Solve();
      }
-return 0;
+     return 0;
 }
+
+// in the end, it doesn't even matter
