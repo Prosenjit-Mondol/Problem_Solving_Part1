@@ -24,7 +24,7 @@ int main()
     //advance(it,3); li.insert(it,5,8);//add any 
     it=li.begin();
     advance(it,2);
-    li.erase(it);
+    //li.erase(it);
     for(auto it:li)
     {
         cout<<it<<" ";
