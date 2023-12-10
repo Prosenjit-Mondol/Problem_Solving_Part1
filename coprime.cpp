@@ -4,26 +4,11 @@
 #include<algorithm>
 using namespace std;
 const int inf = 3e5;
-using ll=unsigned long long ;
+using ll=long long ;
 
-bool check_prime(int n) {
-  bool is_prime = true;
-  if (n == 0 || n == 1) {
-    is_prime = false;
-  }
-
-  for (int i = 2; i <= n / 2; ++i) {
-    if (n % i == 0) {
-      is_prime = false;
-      break;
-    }
-  }
-
-  return is_prime;
-}
 void solve(void)
 {
-    ll n,sum=0;
+    ll sum=-1,n;
     cin>>n;
     vector<int>v;
     for(int i=0;i<n;i++)
@@ -32,44 +17,19 @@ void solve(void)
         cin>>o;
         v.push_back(o);
     }
-    for (int  i = n; i>=0; i--)
+    for (int  i = n-1; i>=0; i--)
     {
-        for (int j= i-1; j>=0; j--)
+      for (int j= i; j>=0; j--)
+      {
+        int g=__gcd(v[i],v[j]);
+        if (g==1)
         {
-            if (v[i]==v[j])
-            {
-                continue;
-            }
-            else if ((v[j]%v[i]==0)||(v[i]%v[j]==0))
-            {
-                continue;
-            }
-            else if (v[i]==1)
-            {
-                sum=i+i+2;
-            }
-            else if (check_prime(v[i]))
-            {
-                for (int k =i-1;k>=0;k--)
-                {
-                    if (v[k]!=v[i])
-                    {
-                        sum=i+k+2;
-                    }
-                    
-                }
-                
-            }
-            
+          ll vc=i+j+2;
+          sum=max(sum,vc);
         }
-        
+      }  
     }
-    if (sum==0)
-    {
-        cout<<-1<<'\n';
-    }
-    else
-    cout<<sum<<'\n';
+    cout<<sum<<"\n";
 }
 
 
