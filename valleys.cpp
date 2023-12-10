@@ -15,28 +15,34 @@ void solve(void)
     {
         ll o;
         cin>>o;
-        v.push_back(o);
-    }
-    auto nn=unique(v.begin(),v.end());
-    if (*it<*(it+1))
-    {
-      for(auto it=v.begin();it!=nn-1;it++)
-      {
-        if (*it<*(it+1))
+        if(i == 0 || o != v.back())
         {
-          
+            v.push_back(o);
         }
-        
-      }
-    }
-    else
+    } 
+    if (n==1)
     {
-      for(auto it=v.begin();it!=nn-1;it++)
-      {
-
-      }
+      cout<<"YES"<<'\n';
+      return;
     }
-    
+    int vv=0;
+
+    for (int i = 0; i < v.size(); i++)
+    {
+       if ((i==0 || v[i-1]>v[i])&&(i==v.size()-1||v[i]<v[i+1]))
+       {
+        vv++;
+       }
+    }
+      if (vv==1)
+      {
+        cout<<"YES"<<'\n';
+      }
+      else
+      {
+        cout<<"No"<<'\n';
+      }
+      
 }
 
 
