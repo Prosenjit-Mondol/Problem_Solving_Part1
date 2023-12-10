@@ -8,24 +8,23 @@ using ll=long long ;
 
 void solve(void)
 {
-    ll sum=-1,n;
+  vector<int>arr(1001,0);
+    int sum=-1,n;
     cin>>n;
-    vector<int>v;
-    for(int i=0;i<n;i++)
+    for(int i=1;i<=n;i++)
     {
-        ll o;
+        int o;
         cin>>o;
-        v.push_back(o);
+        arr[o]=i;
     }
-    for (int  i = n-1; i>=0; i--)
+    for (int  i =1; i<=1000; i++)
     {
-      for (int j= i; j>=0; j--)
+      for (int j=1;j<=1000;j++)
       {
-        int g=__gcd(v[i],v[j]);
-        if (g==1)
+        int g=__gcd(i,j);
+        if (g==1&&arr[i]&&arr[j])
         {
-          ll vc=i+j+2;
-          sum=max(sum,vc);
+          sum=max(sum,arr[i]+arr[j]);
         }
       }  
     }
