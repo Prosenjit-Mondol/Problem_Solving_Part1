@@ -17,7 +17,7 @@ void solve(void)
         cin>>o;
         v.push_back(o);
     }
-    sort(v.begin(),v.end());
+    //sort(v.begin(),v.end());
     int l=abs(n-k);
     ll sum=0;
     for (int i = 0; i < l; i++)
