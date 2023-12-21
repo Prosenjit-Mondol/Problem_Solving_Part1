@@ -15,21 +15,15 @@ void solve(void)
 {
     int n,k;
     cin>>n>>k;
-    if (k!=0)
+    for (int i = n-k; i >=1; i--)
     {
-        for (int i = 1; i <=n; i++)
-        {
-            cout<<i<<" ";
-        }
-        
+        cout<<i<<" ";
     }
-    else
+    for (int i = n-k+1; i <=n; i++)
     {
-        for (int i = n; i>0; i--)
-        {
-            cout<<i<<" ";
-        }
+        cout<<i<<" ";
     }
+    
     cout<<'\n';
     
 }
