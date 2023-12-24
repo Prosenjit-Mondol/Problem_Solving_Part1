@@ -5,6 +5,7 @@
 #define lower(s) transform(s.begin(), s.end(), s.begin(), ::tolower);
 #define upper(s) transform(s.begin(), s.end(), s.begin(), ::toupper);
 using namespace std;
+const int inf = 3e5;
 using ll=unsigned long long ;
 ll mod = 10e9 + 7;
 
@@ -12,38 +13,22 @@ ll mod = 10e9 + 7;
 
 void solve(void)
 {
-    ll c=0,a,b;
-    cin>>a>>b;
-    ll d=a-b;
-    if (a==b)
+    int c=1,od=0,n;
+    cin>>n;
+    if (n<10)
     {
-        cout<<"infinity"<<'\n';
+        cout<<n<<'\n';
         return;
     }
-    if (a<b)
+    else
     {
-        cout<<0<<'\n';
-        return;
-    }
-    for (int i = 1; i*i<=d; i++)
-    {
-        if (d%i==0)
+        string str;
+        for(int i=1;i<=n;i++)
         {
-            if (i>b)
-            {
-                c++;
-            }
-            if(d/i!=i)
-            {
-                if (d/i>b)
-                {
-                    c++;
-                }
-            }
-        }
-        
+           str += to_string(i);
+        } 
+        cout<<str[n-1]<<'\n';
     }
-    cout<<c<<'\n';
 }
 
 
