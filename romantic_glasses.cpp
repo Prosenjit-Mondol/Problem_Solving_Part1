@@ -13,34 +13,40 @@ ll mod = 10e9 + 7;
 
 void solve(void)
 {
-    ll sum1=0,sum2=0,n;
+    ll n,ev=0,od=0;
+    map<ll,ll>mp;
     cin>>n;
-    vector<ll>v1,v2;
-    for (int i = 1; i <=n; i++)
+    vector<ll>v;
+    for(int i=0;i<n;i++)
     {
-        ll x;
-        cin>>x;
-        if (i%2==0)
+        ll o;
+        cin>>o;
+        v.push_back(o);
+    }
+    for (int i = 0; i <n; i++)
+    {
+        if (1&i)
         {
-            v2.push_back(x);
-            sum2+=x;
+            ev+=v[i];
         }
         else
         {
-            v1.push_back(x);
-            sum1+=x;
+            od+=v[i];
         }
+        ll d=ev-od;
+        if (ev==od)
+        {
+            cout<<"YES"<<'\n';
+            return;
+        }
+        if (mp.find(d)!=mp.end())
+        {
+            cout<<"YES"<<'\n';
+            return;
+        }
+        mp[d]=1;
     }
-    cout<<v1.size()<<" "<<v2.size()<<'\n';
-    if (sum1==sum2)
-    {
-        cout<<"YES"<<'\n';
-    }
-    else
-    {
-        
-        
-    }
+    cout<<"NO"<<'\n';
     
 }
 
