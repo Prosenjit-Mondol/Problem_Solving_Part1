@@ -13,7 +13,7 @@ ll mod = 10e9 + 7;
 
 void solve(void)
 {
-    int p=1,n,k;
+    ll p=1,n,k;
     cin>>n>>k;
     vector<int>v;
     for(int i=0;i<n;i++)
@@ -23,7 +23,7 @@ void solve(void)
         v.push_back(o);
         p*=o;
     }
-    if (2023%p!=0)
+    if (2023%p!=0||p>2023)
     {
       cout<<"NO"<<'\n';
     }
