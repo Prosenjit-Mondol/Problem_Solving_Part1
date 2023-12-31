@@ -23,7 +23,7 @@ void solve(void)
         v.push_back(o);
         p*=o;
     }
-    if (2023%p)
+    if (2023%p!=0)
     {
       cout<<"NO"<<'\n';
     }
