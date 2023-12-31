@@ -1,1 +1,0 @@
-{"name":"Local: funky_num","url":"c:\\Languages\\Problem_solving\\C-Code\\funky_num.cpp","tests":[{"id":1703701770372,"input":"256","output":"YES"},{"id":1703701780280,"input":"512","output":"NO"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Languages\\Problem_solving\\C-Code\\funky_num.cpp","group":"local","local":true}
