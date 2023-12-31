@@ -23,18 +23,19 @@ void solve(void)
         v.push_back(o);
         p*=o;
     }
-    if (p==2023)
+    if (2023%p)
     {
-        cout<<"YES"<<'\n';
-        for (int i = 0; i < k; i++)
-        {
-            cout<<1<<" ";
-        }
-        cout<<'\n';
+      cout<<"NO"<<'\n';
     }
-    else if (n==k)
+    else
     {
-        
+      cout<<"YES"<<'\n';
+      cout<<(2023/p)<<" ";
+      for (int i = 1; i < k; i++)
+      {
+        cout<<1<<" ";
+      }
+      cout<<"\n";
     }
     
 }
