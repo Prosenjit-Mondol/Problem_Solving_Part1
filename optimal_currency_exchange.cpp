@@ -13,19 +13,14 @@ ll mod = 10e9 + 7;
 
 void solve(void)
 {
-    ll n,d,e;
+    int n,d,e;
     cin>>n>>d>>e;
-    int dd=n/d;
-    int ee=n/e;
-    if (dd>=ee)
+    int ans = n;
+    for (int i = 0; i * 5 * e <= n; ++i) 
     {
-        cout<<(n%d)<<'\n';
+        ans =min(ans,((n - i * 5 * e) % d));
     }
-    else
-    {
-        cout<<(n%e)<<'\n';
-    }
-    
+    cout<<ans<<'\n';
 }
 
 
