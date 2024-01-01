@@ -15,14 +15,15 @@ void solve(void)
 {
     int n;
     cin>>n;
-    string r,s;
-    cin>>s;
-    for (int i = 0; i < n; i++)
+    string r,x,ss,s;
+    cin>>ss>>s;
+
+    for (int i = 1; i < n; i++)
     {
         cin>>r;
     }
     int l=r.length();
-    if (r[l-1]==s[2]&&r[l-2]==s[1]&&r[l-3]==s[0])
+    if (n%2==0)
     {
         cout<<"home"<<'\n';
     }
