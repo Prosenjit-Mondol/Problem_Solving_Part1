@@ -14,41 +14,38 @@ void solve(void)
     double total=(x*y)*0.6;
     total=ceil(total);
     total-=n;
-    int bakiweek=(x-z);
-    bakiweek*=y;
+    int bw=(x-z);
+    int bakiclass=bw*y;
     
     int tot=total;
-    if(bakiweek<=total)
+    if(bakiclass<total)
     {
-        cout<<"NO"<<"\n";
+      cout<<"NO"<<"\n";
     }
     else
     {
       cout<<"Yes"<<"\n";
-      int l=x-z;
       vector<int>v;
-      for(int i=0;i<l;i++)
-      {
-      v.push_back(0);
-      }
-      for (int i = l-1; i >=0; i--)
+      for (int i = bw-1; i >=0; i--)
       {
         if(tot>=y)
         {
-          v[i]=y;
+          v.push_back(y);
           tot=tot-y;
         }
-        else
+        else if(tot>0)
         {
-          v[i]=v[i]+tot;
-          break;
+          v.push_back(tot);
+          tot=0;
         }
+        else
+        v.push_back(0);
+      }
+      for (int i =v.size()-1; i>=0; i--)
+      {
+        cout<<v[i]<<" ";
       }
       
-      for(auto element : v)
-      {
-      cout<<element<<" ";
-      }
       cout<<"\n";
     }
 }
