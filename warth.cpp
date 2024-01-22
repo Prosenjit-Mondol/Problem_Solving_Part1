@@ -25,7 +25,7 @@ void solve(void)
     int c=0;
     for (ll i = 0; i <n; i++)
     {
-        ll x=min(i+1,v[i]);
+        ll x=min(i+1,i-v[i]);
         if (x>v[i])
         {
             c++;
