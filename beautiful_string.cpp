@@ -38,11 +38,11 @@ void solve(void)
         }
         else
         {
-            s[0]='c';
+            s[0]='a';
         }
         
     }
-    else if (s[l-1]=='?')
+    if (s[l-1]=='?')
     {
         if (s[l-2]=='a')
         {
@@ -54,13 +54,11 @@ void solve(void)
         }
         else
         {
-            s[l-1]='c';
+            s[l-1]='a';
         }
         
     }
-    else
-    {
-        for (int i = 1; i <l-1; i++)
+    for (int i = 1; i <l-1; i++)
         {
             if (s[i]=='?')
             {
@@ -115,8 +113,6 @@ void solve(void)
             }
             
         }
-        
-    }
     cout<<s<<'\n';
 }
 
