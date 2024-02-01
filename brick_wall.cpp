@@ -13,39 +13,10 @@ ll mod = 10e9 + 7;
 
 void solve(void)
 {
-    ll n;
-    cin>>n;
-    vector<ll>v;
-    for(int i=0;i<n;i++)
-    {
-        ll o;
-        cin>>o;
-        v.push_back(o);
-    }
-    vector<ll>v1;
-    for(int i=0;i<n;i++)
-    {
-        ll o;
-        cin>>o;
-        v1.push_back(o);
-    }
-    map<ll,ll>mp;
-    for (int i = 0; i <n; i++)
-    {
-        mp.insert(pair<ll,ll>(v[i],v1[i]));
-    }
-    //sort(mp.begin(),mp.end());
-    for(auto&x:mp)
-    {
-        cout<<x.first<<" "<<x.second<<"\n";
-    }
-    cout<<'\n';
-    for(auto&x:mp)
-    {
-        cout<<x.second<<" ";
-    }
-    cout<<'\n';
-
+    ll n,m;
+    cin>>n>>m;
+    ll a=n*(m/2);
+    cout<<a<<'\n';
 }
 
 
