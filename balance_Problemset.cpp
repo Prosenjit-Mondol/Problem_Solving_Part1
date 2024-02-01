@@ -15,17 +15,22 @@ void solve(void)
 {
     ll x,r,n;
     cin>>x>>n;
-    r=x/n;
-    while (1)
+    r=1;
+    for (ll i = 1; i*i <=x; i++)
     {
-        if (x%r==0)
+        if (x%i==0)
         {
-            cout<<r<<'\n';
-            return;
+            if (i>=n)
+        {
+            r=max(r,x/i);
         }
-        r--;
+        if (x/i>=n)
+        {
+            r=max(r,i);
+        }
+        }
     }
-    
+    cout<<r<<'\n';
 }
 
 
