@@ -11,27 +11,24 @@ ll mod = 10e9 + 7;
 
 //------------------------------------------------------------------------------
 
+int cal(int num){
+	int ans = 0;
+	while (num){
+		ans += num % 10;
+		num /= 10;
+	}
+	return ans;
+}
 void solve(void)
 {
     int n;
     cin>>n;
-    int c=0,s=0,r=n;
-    if (n<10)
-    {
-        cout<<n<<(10-n)<<'\n';
-    }
-    while (n)
-    {
-        int a=n%10;
-        s+=a;
-        n/=10;
-    }
-    if (s>10)
-    {
-        cout<<r/10<<(10-s+(r%10))<<0<<'\n';
-    }
-    else
-    cout<<r<<(10-s)<<'\n';
+    int ans=0;
+    while (n){
+		ans ++;
+		if (cal(ans) == 10) n--;
+	}
+    cout<<ans<<'\n';
 }
 
 
