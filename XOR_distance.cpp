@@ -13,18 +13,14 @@ ll mod = 10e9 + 7;
 
 void solve(void)
 {
-    int x,a,b,r;
+    int x=inf,a,b,r;
     cin>>a>>b>>r;
-    if (r==0)
+    for (int i = 0; i <r; i++)
     {
-        x=abs(a^r-b^r);
-        cout<<x<<'\n';
+      int y=abs(a^i-b^i);
+      x=min(x,y);
     }
-    else
-    {
-        x=abs(a^1-b^1);
-        cout<<x<<'\n';
-    }
+    cout<<x<<'\n';
     
 }
 
