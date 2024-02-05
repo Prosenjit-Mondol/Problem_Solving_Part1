@@ -10,24 +10,37 @@ using ll=unsigned long long ;
 ll mod = 10e9 + 7;
 
 //------------------------------------------------------------------------------
-
-int cal(int num){
-	int ans = 0;
-	while (num){
-		ans += num % 10;
-		num /= 10;
-	}
-	return ans;
+ll b(ll sum){
+    int t=0;
+    while (sum)
+    {
+        int a=sum%10;
+        t+=a;
+        sum/=10;
+    }
+    if (t!=10)
+    {
+        return 1;
+    }
+    else
+    {
+        return 9;
+    }
+    
 }
 void solve(void)
 {
     int n;
     cin>>n;
-    int ans=0;
-    while (n){
-		ans ++;
-		if (cal(ans) == 10) n--;
-	}
+    ll ans=19;
+    for (int i = 1; i <n; i++)
+    {
+        ans+=9;
+        if (b(ans)==1)
+        {
+            i--;
+        }
+    }
     cout<<ans<<'\n';
 }
 
