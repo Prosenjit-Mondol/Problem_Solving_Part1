@@ -13,14 +13,45 @@ ll mod = 10e9 + 7;
 
 void solve(void)
 {
-    int x=inf,a,b,r;
-    cin>>a>>b>>r;
-    for (int ipar = 0; i <r; i++)
+    ll vk=0,v2k=0,n,m,k;
+    cin>>n>>m>>k;
+    vector<ll>v;
+    for(int i=0;i<n;i++)
     {
-      int y=abs(a^i-b^i);
-      x=min(x,y);
+        ll o;
+        cin>>o;
+        v.push_back(o);
+        if (o<=k)
+        {
+            vk++;
+        }
+        
     }
-    cout<<x<<'\n';
+    sort(v.begin(),v.end());
+
+    vector<ll>v2;
+    for(int i=0;i<n;i++)
+    {
+        ll o;
+        cin>>o;
+        v2.push_back(o);
+        if (o<=k)
+        {
+            v2k++;
+        }
+    }
+    sort(v2.begin(),v2.end());
+
+    if (vk<k/2&&v2k>=k/2)
+    {
+        cout<<"NO"<<'\n';
+        return;
+    }
+
+    for (int i =1; i <=k; i++)
+    {
+        
+    }
     
 }
 

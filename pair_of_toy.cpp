@@ -13,14 +13,8 @@ ll mod = 10e9 + 7;
 
 void solve(void)
 {
-    int x=inf,a,b,r;
-    cin>>a>>b>>r;
-    for (int ipar = 0; i <r; i++)
-    {
-      int y=abs(a^i-b^i);
-      x=min(x,y);
-    }
-    cout<<x<<'\n';
+    ll n,k,c=0;
+    cin>>n>>k;
     
 }
 
@@ -32,7 +26,7 @@ ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
   ll t=1;
-  cin>>t;
+  //cin>>t;
     while(t--)
      {
        solve();

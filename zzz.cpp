@@ -1,39 +1,34 @@
-//Author: PROSENJIT MONDOL
+#include <iostream>
+#include <vector>
+#include <string>
 
-#include<bits/stdc++.h>
 using namespace std;
 
-const int inf = 3e5;
-using ll = unsigned long long;
-ll mod = 10e9 + 7;
+int main() {
+    int t;
+    cin >> t;
 
-//------------------------------------------------------------------------------
+    while (t--) {
+        int n;
+        cin >> n;
 
-void solve(void)
-{
-  int c=0;
-  for (int i = 0; i < 10; i++)
-  {
-   for (int j = 0; j< i; j++)
-   {
-    c++;
-   }
-   
-  }
-  cout<<c;
-}
+        vector<int> trace(n);
+        for (int i = 0; i < n; ++i) {
+            cin >> trace[i];
+        }
 
-//------------------------------------------------------------------------------
-int main()
-{
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+        string s(n, 'a');
 
-    ll t = 1;
-    // cin>>t;
-    while (t--)
-    {
-        solve();
+        for (int i = 1; i < n; ++i) {
+            if (trace[i] == 0) {
+                s[i] = s[i - 1] == 'a' ? 'b' : 'a';
+            } else {
+                s[i] = s[trace[i]];
+            }
+        }
+
+        cout << s << endl;
     }
+
     return 0;
 }

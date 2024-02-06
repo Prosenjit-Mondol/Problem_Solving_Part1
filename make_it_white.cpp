@@ -13,15 +13,29 @@ ll mod = 10e9 + 7;
 
 void solve(void)
 {
-    int x=inf,a,b,r;
-    cin>>a>>b>>r;
-    for (int ipar = 0; i <r; i++)
+    int f=0,l=0,n;
+    cin>>n;
+    string s;
+    cin>>s;
+    for (int i = 0; i <n; i++)
     {
-      int y=abs(a^i-b^i);
-      x=min(x,y);
+        if (s[i]=='B')
+        {
+            f=i;
+            break;
+        }
+        
     }
-    cout<<x<<'\n';
-    
+    for (int i = n-1; i>=0; i--)
+    {
+        if (s[i]=='B')
+        {
+            l=i;
+            break;
+        }
+        
+    }
+    cout<<(l-f+1)<<'\n';
 }
 
 
