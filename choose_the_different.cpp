@@ -13,44 +13,52 @@ ll mod = 10e9 + 7;
 
 void solve(void)
 {
-    ll vk=0,v2k=0,n,m,k;
+    ll c=0,a=0,b=0,n,m,k;
     cin>>n>>m>>k;
-    vector<ll>v;
-    for(int i=0;i<n;i++)
+    map<ll,ll>mpa,mpb;
+    for (ll i = 0; i < n; i++)
     {
-        ll o;
-        cin>>o;
-        v.push_back(o);
-        if (o<=k)
+        ll a;
+        cin >> a;
+        mpa[a]++;
+    }
+    for (ll i = 0; i < m; i++)
+    {
+        ll a;
+        cin >> a;
+        mpb[a]++;
+    }
+    for (ll i = 1; i <=k; i++)
+    {
+        if (mpa[i]>0)
         {
-            vk++;
+            a++;
+            if (mpb[i]>0)
+            b++;
+        }
+        else if (mpb[i]>0)
+        {
+            b++;
+        }
+        else
+        {
+            c++;
+            break;
         }
         
     }
-    sort(v.begin(),v.end());
-
-    vector<ll>v2;
-    for(int i=0;i<n;i++)
+    if (c)
     {
-        ll o;
-        cin>>o;
-        v2.push_back(o);
-        if (o<=k)
-        {
-            v2k++;
-        }
+        cout << "NO" << '\n';
     }
-    sort(v2.begin(),v2.end());
-
-    if (vk<k/2&&v2k>=k/2)
-    {
-        cout<<"NO"<<'\n';
-        return;
+    
+    else if (a>=k/2&&b>=k/2)
+    { 
+        cout<<"YES"<<'\n';
     }
-
-    for (int i =1; i <=k; i++)
+    else
     {
-        
+        cout << "NO" << '\n';
     }
     
 }
