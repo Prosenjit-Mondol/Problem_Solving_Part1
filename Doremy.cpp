@@ -13,7 +13,7 @@ ll mod = 10e9 + 7;
 
 void solve(void)
 {
-    ll n;
+    ll r=0,n;
     cin>>n;
     vector<ll>v;
     for(int i=0;i<n;i++)
@@ -21,11 +21,12 @@ void solve(void)
         ll o;
         cin>>o;
         v.push_back(o);
+        r=__gcd(r,o);
     }
-    ll l=v[n-1]/v[0];
-    cout<<l<<'\n';
+    r=v[n-1]/r;
+    cout<<r<<'\n';
 }
-
+        
 
 //------------------------------------------------------------------------------
 int main()
