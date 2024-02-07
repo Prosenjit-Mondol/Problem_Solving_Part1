@@ -15,7 +15,7 @@ void solve(void)
 {
     ll n,k,c=0;
     cin>>n>>k;
-    if (k/2>n)
+    if (k/2>n||n==k)
     {
       cout<<0<<'\n';
     }
