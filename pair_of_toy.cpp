@@ -6,7 +6,7 @@
 #define upper(s) transform(s.begin(), s.end(), s.begin(), ::toupper);
 using namespace std;
 const int inf = 3e5;
-using ll=unsigned long long ;
+using ll=long long ;
 ll mod = 10e9 + 7;
 
 //------------------------------------------------------------------------------
@@ -15,8 +15,18 @@ void solve(void)
 {
     ll o=0,n,k,c=0;
     cin>>n>>k;
+    if (n>=k)
+    {
+      if (k%2==0)
+      {
+        k--;
+      }
+      cout<<(k/2)<<'\n';
+      return;
+    }
+    k=k/2;
     c=n-k;
-    c=(n-c+1)/2;
+    //cout<<c<<'\n';
     ll r=max(o,c);
     cout<<r<<'\n';
 }
