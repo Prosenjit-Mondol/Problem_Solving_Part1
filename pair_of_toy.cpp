@@ -15,6 +15,20 @@ void solve(void)
 {
     ll n,k,c=0;
     cin>>n>>k;
+    if (k/2>n)
+    {
+      cout<<0<<'\n';
+    }
+    else if (k<n)
+    {
+      cout<<(k/2)<<'\n';
+    }
+    else
+    {
+      c=(k-1)/2;
+      c++;
+      cout<<(n-c+1)<<'\n';
+    }
     
 }
 
