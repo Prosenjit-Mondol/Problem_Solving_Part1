@@ -17,8 +17,7 @@ void solve(void)
     cin>>n>>m; 
     string s1,s2;
     cin>>s1>>s2;
-    f=s1.find('*');
-    if(f==0)
+    if(count(s1.begin(),s1.end(),'*')==0)
     {
       if (s1==s2)
       cout<<"YES"<<'\n';
@@ -46,7 +45,6 @@ void solve(void)
     {
       if (s1[c]!=s2[f])
       {
-        cout<<s2[c];
         cout<<"NO"<<'\n';
         return;
       }
