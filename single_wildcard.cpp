@@ -41,14 +41,17 @@ void solve(void)
       r++;
     }
     c=n-1;
+    f=m-1;
     while (s1[c]!='*')
     {
-      if (s1[c]!=s2[c])
+      if (s1[c]!=s2[f])
       {
+        cout<<s2[c];
         cout<<"NO"<<'\n';
         return;
       }
       c--;
+      f--;
     }
     cout<<"YES"<<'\n';
 }
