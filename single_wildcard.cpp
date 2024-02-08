@@ -13,35 +13,44 @@ ll mod = 10e9 + 7;
 
 void solve(void)
 {
-    int r=0,c=0,n,m;
-    cin>>n>>m;
+    int c,f=0,r=0,n,m;
+    cin>>n>>m; 
     string s1,s2;
     cin>>s1>>s2;
-    for (int i = 0; i < n; i++)
+    f=s1.find('*');
+    if(f==0)
     {
-        if (s1[i]!='*')
-        {
-            for (int j= 0; j<m; j++)
-            {
-                if (s1[i]==s2[j])
-                {
-                    s2[j]='0';
-                    s1[i]='0';
-                    r++;
-                }
-            }
-            
-        }
-        else
-        {
-            c++;
-        }
-        
+      if (s1==s2)
+      cout<<"YES"<<'\n';
+      else
+      cout<<"NO"<<'\n';
+      return;
     }
-    if((r+c)==n)
+    if (n-1>m)
+    {
+      cout<<"NO"<<'\n';
+      return;
+    }
+    while (s1[r]!='*')
+    {
+      if (s1[r]!=s2[r])
+      {
+        cout<<"NO"<<'\n';
+        return;
+      }
+      r++;
+    }
+    c=n-1;
+    while (s1[c]!='*')
+    {
+      if (s1[c]!=s2[c])
+      {
+        cout<<"NO"<<'\n';
+        return;
+      }
+      c--;
+    }
     cout<<"YES"<<'\n';
-    else
-    cout<<"NO"<<'\n';
 }
 
 
