@@ -6,7 +6,7 @@
 #define upper(s) transform(s.begin(), s.end(), s.begin(), ::toupper);
 using namespace std;
 const int inf = 3e5;
-using ll=unsigned long long ;
+using ll=long long ;
 ll mod = 10e9 + 7;
 
 //------------------------------------------------------------------------------
@@ -14,48 +14,30 @@ ll mod = 10e9 + 7;
 void solve(void)
 {
     int n;
-    cin>>n;
-    vector<ll>a,b,c;
-    for (int i = 0; i < n; i++)
-    {
-        int x,y;
-        cin>>x>>y;
-        if (x==1)
-        {
-            a.push_back(y);
-        }
-        else if (x==2)
-        {
-            c.push_back(y);
-        }
-        else
-        {
-            b.push_back(y);
-        }
-    }
-    sort(a.begin(),a.end(),greater());
-    sort(c.begin(),c.end());
-    ll r=a[0];
-    ll f=c[0]-1;
-    for (int i = 0; i <b.size(); i++)
-    {
-        if(count(b.begin(),b.end(),f)){
-            f--;
-        }
+    cin >> n;
 
-        else
-        {
-            if (f<r)
-            {
-                cout<<0<<'\n';
-            }
-            else
-            cout<<f<<'\n';
-            return;
-        }
-        
+    int l = 1;
+    int r = 1e9;
+    int s = 0;
+    
+    vector<int> neq;
+
+    for (int i = 0; i < n; i++){
+        int a, x;
+        cin >> a >> x;
+
+        if (a == 1)
+            l = max(l, x);
+        if (a == 2)
+            r = min(r, x);
+        if (a == 3)
+            neq.push_back(x);
     }
-    cout<<0<<'\n';
+    for (int x : neq)
+        if (x >= l and x <= r)
+            s++;
+    
+    cout<<max(r - l + 1 - s, 0)<<"\n";
 }
 
 
