@@ -7,57 +7,35 @@
 using namespace std;
 const int inf = 3e5;
 using ll=unsigned long long ;
-ll mod = 10e9 + 7;
+ll mod = 1e9 + 7;
 
 //------------------------------------------------------------------------------
 
 void solve(void)
 {
-    int a,b,z=1,c=0,m=1,n;
+    int sum=0,c=INT_MIN,n;
     cin>>n;
     set<int>s;
     for(int i=0;i<n;i++)
     {
     int x;
     cin>>x;
-    int r=x%10;
-    s.insert(r);
+    s.insert(x);
     }
-    int l=s.size();
-    vector<ll>v;
-    for (auto it = s.begin(); it !=s.end(); ++it)
+    map<int,int>mp;
+    for (auto it :s)
     {
-    v.push_back(*it);
+        mp[it+1]++;
+        mp[it+n+1]--;
     }
-    a=v[0];
-    b=v[l-1];
 
-
-    if ((b-a+1)<=n){
-        cout<<l<<'\n';
-    }
-    else
+    for(auto x:mp)
     {
-        while ((b-a+1)>n)
-        {
-            int fa=v[m];
-            int lb=v[l-z];
-            if ((b-fa+1)<(lb-a+1))
-            {
-                a=fa;
-                m++;
-            }
-            else
-            {
-                b=lb;
-                z++;
-            }
-            
-        }
-        cout<<(s.size()+2-m-z)<<'\n';
+       sum+=x.second;
+       c=max(c,sum);
     }
-    
 
+    cout<<c<<'\n';
 }
 
 
