@@ -38,18 +38,21 @@ void solve(void)
         if (v[0]!=v[i])
         {
             a=i;
+            break;
         }
         aa++;
-        break;
+        
     }
+
     for (int i =n-1; i >=0; i--)
     {
         if (v[n-1]!=v[i])
         {
             b=i;
+            break;
         }
         bb++;
-        break;
+        
     }
 
     if (aa>=bb)
