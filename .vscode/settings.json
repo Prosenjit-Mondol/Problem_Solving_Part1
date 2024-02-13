@@ -10,6 +10,7 @@
         "iostream": "cpp",
         "string": "cpp",
         "format": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "complex": "cpp"
     }
 }
