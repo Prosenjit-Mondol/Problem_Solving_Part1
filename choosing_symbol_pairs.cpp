@@ -15,12 +15,17 @@ void solve(void)
 {
     string s;
     cin>>s;
-    set<char>se;
-    for(int i=0;i<s.length();i++)
+    map<char,int>mp;
+    for (int i = 0; i <s.length(); i++)
     {
-    se.insert(s[i]);
+      mp[s[i]]++;
     }
-    cout<<s.size()<<'\n';
+    ll r=0;
+    for(int i=0;i<s.size();i++)
+    {
+      r+=mp[s[i]];
+    }
+    cout<<r<<'\n';
 }
 
 
