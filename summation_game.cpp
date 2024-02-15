@@ -6,15 +6,33 @@
 #define upper(s) transform(s.begin(), s.end(), s.begin(), ::toupper);
 using namespace std;
 const int inf = 3e5;
-using ll=unsigned long long ;
+using ll=long long ;
 ll mod = 10e9 + 7;
 
 //------------------------------------------------------------------------------
 
 void solve(void)
 {
-    
-}
+  int n,k,x;
+  cin>>n>>k>>x;
+  vector<ll>v;
+  for(int i=0;i<n;i++)
+  {
+      ll o;
+      cin>>o;
+      v.push_back(o);
+  }
+  sort(v.begin(),v.end(),greater());
+
+  for (int i = 1; i <=n; i++)
+  {
+    v[i]+=v[i-1];
+  }
+  for(auto element : v)
+  {
+  cout<<element<<" ";
+  }
+  }
 
 
 //------------------------------------------------------------------------------
