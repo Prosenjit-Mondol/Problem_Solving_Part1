@@ -15,20 +15,20 @@ void solve(void)
 {
     ll n,k;
     cin>>n>>k;
-    if (k%2!=0)
+    ll d=4*n-2;
+    if (k==d)
     {
-        cout<<(k/2+1)<<'\n';
+        cout<<(n*2)<<'\n';
     }
     else
     {
-        ll d=k/2;
-        if (d<=n)
+        if (k%2!=0)
         {
-            cout<<d<<'\n';
+            cout<<(k/2+1)<<'\n';
         }
         else
         {
-            cout<<(d+1)<<'\n';
+            cout<<(k/2)<<'\n';
         }
         
     }
