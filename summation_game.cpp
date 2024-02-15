@@ -15,20 +15,22 @@ void solve(void)
 {
   int n,k,x;
   cin>>n>>k>>x;
-  vector<ll>v;
+
+  vector<int>v;
   for(int i=0;i<n;i++)
   {
-      ll o;
+      int o;
       cin>>o;
       v.push_back(o);
   }
-  sort(v.begin(),v.end(),greater());
-
-  for (int i = 1; i <=n; i++)
+  sort(v.begin(),v.end());
+  vector<int>v2;
+  v2[0]=0;
+  for(int i=1;i<=n;i++)
   {
-    v[i]+=v[i-1];
+      v2[i]=v2[i-1]+v[i-1];
   }
-  for(auto element : v)
+  for(auto element : v2)
   {
   cout<<element<<" ";
   }
