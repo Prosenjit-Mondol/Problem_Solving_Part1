@@ -13,7 +13,22 @@ ll mod = 10e9 + 7;
 
 void solve(void)
 {
-    
+    int n;
+    cin>>n;
+    ll sum=0;
+    vector<ll>v;
+    for(int i=0;i<n;i++)
+    {
+        ll o;
+        cin>>o;
+        v.push_back(o);
+    }
+    sort(v.begin(),v.end());
+    for (int i = 0; i <n-1; i++)
+    {
+        sum+=(v[i+1]-v[i]);
+    }
+    cout<<sum<<'\n';
 }
 
 
