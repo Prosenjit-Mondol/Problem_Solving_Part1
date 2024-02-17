@@ -24,16 +24,40 @@ void solve(void)
       v.push_back(o);
   }
   sort(v.begin(),v.end());
-  vector<int>v2;
-  v2[0]=0;
-  for(int i=1;i<=n;i++)
+
+  vector<ll>v2(n,0);
+  v2[0]=v[0];
+  for(int i=1;i<n;i++)
   {
-      v2[i]=v2[i-1]+v[i-1];
+      v2[i]=v2[i-1]+v[i];
   }
-  for(auto element : v2)
+  ll ans=INT_MIN;
+  for (int i = 0; i <=k; i++)
   {
-  cout<<element<<" ";
+    if (i==n)
+    {
+      ans=max(ans,0LL);
+      break;
+    }
+    ll afterR=v2[n-1-i];
+    int canNegify=min(n-i,x);
+    int lastRemainingIndex=n-1-i;
+    int negifiedTill=max(0,lastRemainingIndex-canNegify+1);
+     ll gain;
+         ll negifiedWindowSum;
+         if(negifiedTill==0){
+            negifiedWindowSum = v2[lastRemainingIndex];
+            gain= -negifiedWindowSum;
+         }
+         else{
+            negifiedWindowSum=v2[lastRemainingIndex]-v2[negifiedTill-1];
+            gain = v2[negifiedTill-1]-negifiedWindowSum;
+         }
+ 
+         ans=max(ans,gain);
   }
+  
+cout<<ans<<'\n';
   }
 
 
