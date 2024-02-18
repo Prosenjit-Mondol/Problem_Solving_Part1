@@ -13,47 +13,51 @@ ll mod = 1e9 + 7;
 
 void solve(void)
 {
-    ll p=1;
+    ll product=1;
     int l=0,r,n,m;
     cin>>n>>m;
     r=n-1;
-    vector<int>v;
+    vector<int>a,ans;
     for(int i=0;i<n;i++)
     {
         int o;
         cin>>o;
-        v.push_back(o);
-        p*=o;
+        a.push_back(o);
     }
-    string s;
-    cin>>s;
-    if (m==1)
+    string str;
+    cin>>str;
+    
+    for (int i = 0; i <n; i++)
     {
-        for (int i = 0; i <n; i++)
+        if (str[i]=='L')
         {
-            cout<<0<<" ";
-        }
-        cout<<'\n';
-        return;
-    }
-    cout<<(p%m)<<" ";
-    for (int i = 0; i <n-1; i++)
-    {
-        if (s[i]=='L')
-        {
-            int k=v[l];
-            p=p/k;
-            cout<<(p%m)<<" ";
             l++;
         }
-        else if (s[i]=='R')
+        else
         {
-            int k=v[r];
-            p=p/k;
-            cout<<(p%m)<<" ";
             r--;
         }
+        
     }
+    
+    for (int i = n - 1; i >= 0; i--) {
+            if (str[i] == 'L') {
+                l--;
+                product *= a[l];
+                product = product % m == 0? m : product % m;
+                ans.push_back(product);
+            } else {
+                r++;
+                product *= a[r];
+                product = product % m == 0? m : product % m;
+                ans.push_back(product);
+            }
+        }
+
+    for (int i = ans.size() - 1; i >= 0; i--) {
+        cout << ans[i]%m << " ";
+    }
+    
     cout<<'\n';
 }
 
