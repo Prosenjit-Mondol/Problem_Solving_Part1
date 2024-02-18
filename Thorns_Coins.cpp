@@ -26,11 +26,10 @@ void solve(void)
            c++;
         }
         m=max(m,c);
-        if (s[i]=='*'&&s[i-1]!='.')
+        if (s[i]=='*'&&s[i+1]=='*')
         {
-            c--;
+            break;
         }
-        
     }
     cout<<m<<'\n';
 }
