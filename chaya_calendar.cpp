@@ -26,17 +26,7 @@ void solve(void)
     {
         if (v[i]<=v[i-1])
         {
-            int k=v[i];
-            for(int j=2;;j++)
-            {
-                v[i]=k*j;
-                if (v[i]>v[i-1])
-                {
-                    break;
-                }
-                
-            }
-            
+            v[i]=(v[i-1]/v[i]+1)*v[i];
         }
         
     }
