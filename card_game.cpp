@@ -15,56 +15,64 @@ void solve(void)
 {
     int k=0,f=0,n;
     cin>>n;
-    n=n*2;
     char c;
     cin>>c;
-    string str,t[n/2],s[n/2];
-    for (int i = 0; i <n; i++)
+    map<char,vector<string>>mp;
+
+    for (int i = 0; i <n*2; i++)
     {
-        cin>>str;
-        if (str[1]==c)
-        {
-            t[f]=str;
-            f++;
-        }
-        else
-        {
-            s[k]=str;
-            k++;
-        }
+        string s;
+        cin>>s;
+        if (s[1]=='C') mp['C'].push_back(s);
+        if(s[1]=='D')  mp['D'].push_back(s);
+        if (s[1]=='S') mp['S'].push_back(s);
+        if(s[1]=='H')  mp['H'].push_back(s);
         
     }
-    if (f==0)
+    string val="CSDH";
+
+    sort(mp['C'].begin(),mp['C'].end());
+    sort(mp['D'].begin(),mp['D'].end());
+    sort(mp['D'].begin(),mp['D'].end());
+    sort(mp['H'].begin(),mp['H'].end());
+
+    vector<string>ans;
+
+    for (int i = 0; i <4; i++)
     {
-        cout<<"IMPOSSIBLE"<<'\n';
-    }
-    else
-    {
-        if (f>=n/2)
+        if (val[i]!=c&&mp[val[i]].size()>0)
         {
-            for (int i = 0; i <n/2; i++)
+            if (mp[val[i]].size()%2!=0&&mp[c].size()==0)
             {
-                if (k>0&&f>0)
-                {
-                    cout<<s[k]<<" "<<t[f]<<'\n';
-                    k--;
-                    f--;
-                }
-                else
-                {
-                    cout<<t[f]<<" "<<t[f-1]<<'\n';
-                    f-=2;
-                }
-                
-                
+                cout<<"IMPOSSIBLE"<<'\n';
+                return;
+            }
+            vector<string> temp=mp[val[i]];
+            int i=0;
+            if (temp.size()%2!=0)
+            {
+                ans.push_back(temp[0]);
+                ans.push_back(mp[c].back());
+                mp[c].pop_back();
+                i++;
+            }
+            for (; i <temp.size(); i+=2)
+            {
+                ans.push_back(temp[i]);
+                ans.push_back(temp[i+1]);
             }
             
         }
-        else
-        {
-            /* code */
-        }
         
+    }
+    vector<string> temp=mp[c];
+    for (int i = 0; i < temp.size(); i+=2)
+    {
+        cout<<temp[i]<<" "<<temp[i+1]<<'\n';
+    }
+    for (int i = 0; i <ans.size(); i+=2)
+    {
+        cout<<ans[i]<<" "<<ans[i+1]<<'\n';
     }
     
 }
