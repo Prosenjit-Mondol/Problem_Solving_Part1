@@ -14,10 +14,10 @@ ll mod = 1e9 + 7;
 void solve(void)
 {
     string s="abcd";
-    while (next_permutation(s.begin(),s.end()))
+    do
     {
         cout<<s<<" ";
-    }
+    }while (next_permutation(s.begin(),s.end()));
     
 }
 
