@@ -23,6 +23,11 @@ void solve(void)
     sort(p.begin(),p.end());
     int l=unique(p.begin(),p.end())-p.begin();
     cout<<l<<'\n';
+    for (int i = 0; i <l; i++)
+    {
+        cout<<p[i].first<< " "<<p[i].second<<"\n";
+    }
+    
 }
 
 
