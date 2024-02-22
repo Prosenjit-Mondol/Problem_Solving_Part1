@@ -26,7 +26,7 @@ void solve(void)
     {
         string na,ku;
         cin>>na>>ku;
-        cout<<na<<ku<<" #";
+        cout<<na<<" "<<ku<<" #";
         ku.pop_back();
         cout<<mp[ku]<<'\n';
     }
