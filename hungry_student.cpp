@@ -13,18 +13,35 @@ ll mod = 1e9 + 7;
 
 void solve(void)
 {
-    int n;
+    int x,n;
     cin>>n;
-    int x=n%7;
-    if (x%3)
+    for (int i = 0; i <35; i++)
     {
-        cout<<"NO"<<'\n';
+        for (int j= 0; j< 35; j++)
+        {
+            x=i*3+j*7;
+            if (x==n)
+            {
+                cout<<"YES"<<'\n';
+                return;
+            }
+            
+        }
     }
-    else
+    for (int i = 0; i <35; i++)
     {
-        cout<<"YES"<<'\n';
+        for (int j= 0; j< 35; j++)
+        {
+            x=i*7+j*3;
+            if (x==n)
+            {
+                cout<<"YES"<<'\n';
+                return;
+            }
+            
+        }
     }
-    
+    cout<<"NO"<<'\n';
 }
 
 
