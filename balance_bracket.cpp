@@ -18,7 +18,7 @@ void solve(void)
     string s;
     cin>>s;
     stack<char>st;
-    for (int i = 0; i <n; i++)
+    for (int i = 0; i <2*n; i++)
     {
         if (s[i]=='(')
         {
