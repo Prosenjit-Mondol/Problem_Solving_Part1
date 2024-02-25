@@ -13,24 +13,17 @@ ll mod = 1e9 + 7;
 
 void solve(void)
 {
-    int sum=0,n;
+    int sum=1,n;
     cin>>n;
     string s;
     cin>>s;
     stack<char>st;
     for (int i = 0; i <2*n; i++)
     {
-        if (s[i]=='(')
+        if (s[i]=='('&&s[i-1]=='(')
         {
-           st.push(s[i]);
+           sum++;
         }
-        int x=st.size();
-        sum=max(sum,x);
-        if (s[i]==')')
-        {
-           st.pop();
-        }
-        
         
     }
     cout<<sum<<'\n';
