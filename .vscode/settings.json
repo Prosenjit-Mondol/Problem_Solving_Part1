@@ -12,6 +12,9 @@
         "format": "cpp",
         "vector": "cpp",
         "complex": "cpp",
-        "deque": "cpp"
+        "deque": "cpp",
+        "*.tcc": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp"
     }
 }
