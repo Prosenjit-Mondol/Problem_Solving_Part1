@@ -13,34 +13,36 @@ ll mod = 1e9 + 7;
 
 void solve(void)
 {
-    int n;
+    int m=inf,n;
     cin>>n;
-    vector<ll>v;
-    for(int i=0;i<n;i++)
+    map<int,int>mp;
+    for (int i = 0; i <n; i++)
     {
-        ll o;
-        cin>>o;
-        v.push_back(o);
-    }
-    sort(v.begin(),v.end(),greater<int>());
-    int m=v[0]%v[1];
+        int x;
+        cin>>x;
 
-    for (int i = 2; i < n-1; i++)
-    {
-        cout<<m<<" ";
-        m=m%v[i];
+       mp.insert(pair<ll,ll>(x,mp[x]++));
+       m=min(m,x);
     }
-    if (m==0)
-    {
-        cout<<"NO"<<'\n';
-    }
-    else
+    if (mp[m]==1)
     {
         cout<<"YES"<<'\n';
     }
+    else
+    {
+        for(auto&x:mp)
+        {
+            if (x.first%m!=0)
+            {
+                cout<<"YES"<<'\n';
+                return;
+            }
+            
+        }
+        cout<<"NO"<<'\n';
+    }
     
 }
-
 
 //------------------------------------------------------------------------------
 int main()
