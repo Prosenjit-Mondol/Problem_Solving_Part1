@@ -15,38 +15,23 @@ void solve(void)
 {
     int a,b,l;
     cin>>a>>b>>l;
-    int c=0;
-    int x=sqrt(l);
-    x++;
-    for (int i = 0; i <=x; i++)
+
+    set<int>s;
+
+    for (int i = 0; i <25; i++)
     {
-        for (int j= i; j<=x; j++)
+        for (int j= 0; j<25; j++)
         {
-            for(int k=1;k<=l;k++)
-            {
-                int sum=k*pow(a,i)*pow(b,j);
-                if (sum==l)
+                int sum=pow(a,i)*pow(b,j);
+                if (l%sum==0)
                 {
-                   c++;
+                    s.insert(l/sum);
                 }
-            }
         }
         
     }
-    for (int i = 0; i <=x; i++)
-    {
-        for (int j=i; j<=x; j++)
-        {
-            int sum=pow(b,i)+pow(a,j);
-            if (sum==l)
-            {
-                c++;
-            }
-            sum=0;
-        }
-        
-    }
-    cout<<c<<'\n';
+    
+    cout<<s.size()<<'\n';
 }
 
 
