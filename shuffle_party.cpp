@@ -13,25 +13,13 @@ ll mod = 1e9 + 7;
 
 void solve(void)
 {
-    ll r,n;
+    ll r=1,n;
     cin>>n;
-    if (n==1)
+    while (r*2<=n)
     {
-        cout<<1<<'\n';
+        r*=2;
     }
-    else
-    {
-        if (n%2==0)
-        {
-            cout<<n<<'\n';
-        }
-        else
-        {
-            r=n/2;
-            r+=2;
-            cout<<r<<'\n';
-        }
-    }
+    cout<<r<<'\n';
     
 }
 
