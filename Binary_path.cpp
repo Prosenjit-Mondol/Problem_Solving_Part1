@@ -15,34 +15,40 @@ void solve(void)
 {
     int f=0,n;
     cin>>n;
-    string a,b,s;
-    cin>>a>>b;
-    int ma=n,mi=1;
-    for (int i = 0; i <=n; i++)
-    {
-        if (f==1)
-        {
-            s+=b[i];
-        }
-        else if (a[i]=='1'&&b[i]=='0')
-        {
-            s+=a[i];
-            s+=b[i];
-            f=1;
-        }
-        else if (a[i]=='0'&&b[i]=='0')
-        {
-            s+=a[i];
-            s+=b[i];
-            f=1;
-        }
-        else
-        {
-            s+=a[i];
-        }
-        
-    }
-    cout<<s<<'\n';
+    char arr[3][n + 2];
+     for (int i = 1; i <= 2; i++)
+     {
+          for (int j = 1; j <= n; j++)
+          {
+               cin >> arr[i][j];
+          }
+     }
+     int last = n;
+     for (int i = 1; i < n; i++)
+     {
+          if (arr[2][i] < arr[1][i + 1])
+          {
+               last = max(1, i);
+               break;
+          }
+     }
+     int first = 1;
+     for (int i = last; i > 1; i--)
+     {
+          if (arr[2][i - 1] > arr[1][i])
+          {
+               first = i;
+               break;
+          }
+     }
+     for (int i = 1; i <= last; i++)
+          cout << arr[1][i];
+     for (int i = last; i <= n; i++)
+          cout << arr[2][i];
+     cout << '\n';
+     cout << last - first + 1 << '\n';
+
+
 }
 
 
