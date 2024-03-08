@@ -13,25 +13,32 @@ ll mod = 1e9 + 7;
 
 void solve(void)
 {
-    int r=INT_MAX;
+    int r,n;
     string s;
     cin>>s;
-    set<char>st;
-    for (int i = 0; i <s.length()-2; i++)
+    n=s.length();
+    r=n+5;
+    int l=0;
+    int cnt[4]={};
+    for (int i = 0; i < n; i++)
     {
-        if(s[i]!=s[i+1])
+        int d=s[i]-'0';
+        cnt[d]++;
+        while (cnt[s[l]-'0']>1)
+        cnt[s[l]-'0']--;
+        l++;
+        if (cnt[1]&&cnt[2]&&cnt[3])
         {
-            int k=i;
-            st.insert(s[i]);
-            while (st.size()<=3)
-            {
-                k++;
-                st.insert(s[k]);
-            }
-            r=min(r,(k-i-1));
-            st.clear();
+            r=min(r,i-l+1);
         }
+        
     }
+    
+    if (r==n+5)
+    {
+        r=0;
+    }
+    
     cout<<r<<'\n';
 }
 
