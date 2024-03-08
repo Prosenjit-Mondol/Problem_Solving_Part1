@@ -25,7 +25,7 @@ void solve(void)
         int d=s[i]-'0';
         cnt[d]++;
         while (cnt[s[l]-'0']>1)
-        cnt[s[l]-'0']--;
+        cnt[s[l]-'0']--,
         l++;
         if (cnt[1]&&cnt[2]&&cnt[3])
         {
