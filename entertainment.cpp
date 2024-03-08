@@ -15,30 +15,18 @@ void solve(void)
 {
     ll n;
     cin>>n;
-    string s;
+    string r,s;
     cin>>s;
-    if (s.length()==1)
-    {
-        cout<<s<<'\n';
-        return;
-    }
-    
-    char a,b;
-    a=s[0];
-    b=s[s.length()-1];
-    
-    
-    if (a<=b)
+    r=s;
+    reverse(r.begin(),r.end());
+    r+=s;
+    if (r>s)
     {
         cout<<s<<'\n';
     }
     else
     {
-        for (int i =s.length()-1; i>=0; i--)
-        {
-            cout<<s[i];
-        }
-        cout<<s<<'\n';
+        cout<<r<<'\n';
     }
     
 }
