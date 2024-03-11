@@ -13,7 +13,7 @@ ll mod = 1e9 + 7;
 
 void solve(void)
 {
-    int r=0,z=0,f=0,n;
+    int p=0,r=0,z=0,f=0,n;
     cin>>n;
     vector<ll>v;
     for(int i=0;i<n;i++)
@@ -22,20 +22,27 @@ void solve(void)
         cin>>o;
         v.push_back(o);
     }
-    for (int i = 1; i <n-1; i++)
+    for (int i = 1; i <n-2; i++)
     {
         if (v[i]==0||v[i+1]==0)
         {
             z=1;
             break;
         }
-        if (v[i]==v[i+1])
+
+        if ((v[i]-v[i+1])==1||(v[i]-v[i+1])==-1)
         {
             r=1;
         }
-        if ((v[i]-v[i+1])==2||(v[i]-v[i+1])==-2)
+
+        else if ((v[i]-v[i+1])==2||(v[i]-v[i+1])==-2)
         {
             f=1;
+        }
+        
+        else
+        {
+            p=1;
         }
         
     }
@@ -44,7 +51,7 @@ void solve(void)
         cout<<"NO"<<'\n';
     }
     
-    else if(f==1&&r==1)
+    else if(r==1||f==1)
     {
         cout<<"YES"<<'\n';
     }
