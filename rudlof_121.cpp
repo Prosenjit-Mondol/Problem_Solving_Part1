@@ -22,36 +22,13 @@ void solve(void)
         cin>>o;
         v.push_back(o);
     }
+
     for (int i = 1; i <n-2; i++)
     {
-        if (v[i]==0||v[i+1]==0)
-        {
-            z=1;
-            break;
-        }
-
-        if ((v[i]-v[i+1])==1||(v[i]-v[i+1])==-1)
-        {
-            r=1;
-        }
-
-        else if ((v[i]-v[i+1])==2||(v[i]-v[i+1])==-2)
-        {
-            f=1;
-        }
-        
-        else
-        {
-            p=1;
-        }
-        
+        p=v[i]-v[i+1];
+        r+=abs(p);
     }
-    if (z==1)
-    {
-        cout<<"NO"<<'\n';
-    }
-    
-    else if(r==1||f==1)
+    if (r%2==0)
     {
         cout<<"YES"<<'\n';
     }
