@@ -22,24 +22,27 @@ void solve(void)
         cin>>o;
         v.push_back(o);
     }
+    ll neg = max(0LL, v[1]);
+    for (int i = 0; i+2< n; i++)
+    {
+        ll d=max(0LL,v[i]);
+        v[i]-=d;
+        v[i+1]-=2*d;
+        v[i+2]-=d;
+    }
+    for (int i = 0; i <n; i++)
+    {
+        cout<<v[i]<<" ";
+        if (v[i]!=0)
+        {
+            cout<<"NO"<<'\n';
+            return;
+        }
+        
+    }
+    cout<<"YES"<<'\n';
 
-    for (int i = 1; i <n-2; i++)
-    {
-        p=v[i]-v[i+1];
-        r+=abs(p);
-    }
-    if (r%2==0)
-    {
-        cout<<"YES"<<'\n';
-    }
-    else
-    {
-        cout<<"NO"<<'\n';
-    }
-    
 }
-
-
 //------------------------------------------------------------------------------
 int main()
 {
