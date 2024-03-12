@@ -10,12 +10,22 @@ using ll=long long ;
 ll mod = 1e9 + 7;
 
 //------------------------------------------------------------------------------
-
+int fact(int n){
+    if (n<=1)
+    {
+        return 1;
+    }
+    else
+    {
+        return n*fact(n-1);
+    }
+    
+}
 void solve(void)
 {
     int n;
     cin>>n;
-    ll r=(n*(n+1))/2;
+    ll r=fact(n);
     r++;
     cout<<r<<'\n';
 }
