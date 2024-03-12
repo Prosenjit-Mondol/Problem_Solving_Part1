@@ -13,7 +13,9 @@ ll mod = 1e9 + 7;
 
 void solve(void)
 {
-
+    string v;
+    cin>>v;
+    cout<<v[1];
 }
 
 
