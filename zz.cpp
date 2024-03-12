@@ -1,35 +1,25 @@
-//Author  :  PROSENJIT MONDOL
+#include <iostream>
 
-
-#include<bits/stdc++.h>
-#define lower(s) transform(s.begin(), s.end(), s.begin(), ::tolower);
-#define upper(s) transform(s.begin(), s.end(), s.begin(), ::toupper);
-using namespace std;
-const int inf = 3e5;
-using ll=long long ;
-ll mod = 1e9 + 7;
-
-//------------------------------------------------------------------------------
-
-void solve(void)
-{
-    string v;
-    cin>>v;
-    cout<<v[2];
+// Function to calculate factorial
+int factorial(int n) {
+    if (n <= 1)
+        return 1;
+    else
+        return n * factorial(n - 1);
 }
 
+// Function to count permutations
+int countPermutations(int n) {
+    return factorial(n);
+}
 
-//------------------------------------------------------------------------------
-int main()
-{
-ios_base::sync_with_stdio(false);
-cin.tie(NULL);
+int main() {
+    int n;
+    std::cout << "Enter the value of n: ";
+    std::cin >> n;
 
-  ll t=1;
-  //cin>>t;
-    while(t--)
-     {
-       solve();
-     }
-return 0;
+    int num_permutations = countPermutations(n);
+    std::cout << "Number of permutations of " << n << " numbers: " << num_permutations << std::endl;
+
+    return 0;
 }
