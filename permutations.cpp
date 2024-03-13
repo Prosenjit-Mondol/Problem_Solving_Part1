@@ -23,7 +23,11 @@ int n;
        cout<<1<<'\n';
        return 0;
     }
-    
+    if (n==4)
+    {
+       cout<<2<<" "<<4<<" "<<1<<" "<<3<<'\n';
+       return 0;
+    }
     if (n<=3)
     {
         cout<<"NO SOLUTION"<<'\n';
