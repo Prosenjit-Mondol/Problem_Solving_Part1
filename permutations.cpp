@@ -16,12 +16,17 @@ int main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
-cout<<"Input:"<<'\n';
 int n;
     cin>>n;
-    if (n<=4)
+    if (n==1)
     {
-        cout<<"Output:\nNO SOLUTION"<<'\n';
+       cout<<1<<'\n';
+       return 0;
+    }
+    
+    if (n<=3)
+    {
+        cout<<"NO SOLUTION"<<'\n';
     }
     else if (n%2==0)
     {
@@ -46,6 +51,7 @@ int n;
         }
         
     }
+    cout<<'\n';
     
 return 0;
 }
