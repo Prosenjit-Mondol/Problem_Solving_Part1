@@ -33,8 +33,9 @@ void solve(void)
     else
     {
         ll r=(n*n-n+1);
-
+        //if(n%2!=0)
         r=r+(n+m)*(m-n);
+        
         cout<<r<<'\n';   
     }
 }
