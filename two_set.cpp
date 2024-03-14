@@ -23,35 +23,62 @@ void solve(void)
     }
     else
     {
-        sum/=2;
-        set<int>s1;
-        map<int,int>mp;
-        while (sum>r)
+        
+        cout<<"YES"<<'\n';
+        vector<ll>f,s;
+
+        if (n%2==0)
         {
-            
-            if ((sum-r)<n)
+            for (int i = 0; i < n/2; i++)
             {
-                s1.insert(sum-r);
-                break;
+                if (i%2==0)
+                {
+                    f.push_back(i+1);
+                    f.push_back(n-i);
+                }
+                else
+                {
+                    s.push_back(i+1);
+                    s.push_back(n-i);
+                }
             }
-            r+=k;
-            s1.insert(k);
-            k--;
         }
-        cout<<"YES"<<'\n'<<s1.size()<<'\n';
-        for (auto it :s1)
+        else
         {
-            cout << it<< ' ';
-            mp[it]=1;
-        }
-        cout<<'\n'<<(n-s1.size())<<'\n';
-        for (int i =1; i <=n; i++)
-        {
-            if (mp[i]!=1)
+            for (int i = 0; i <(n-1)/2; i++)
             {
-                cout<<i<<" ";
+                if (i%2==0)
+                {
+                    f.push_back(i+1);
+                    f.push_back(n-i-1);
+                }
+                else
+                {
+                    s.push_back(i+1);
+                    s.push_back(n-i-1);
+                }
+            }
+            if (f.size()>s.size())
+            {
+                s.push_back(n);
+            }
+            else
+            {
+                f.push_back(n);
             }
             
+        }
+        cout<<f.size()<<'\n';
+        for(auto element : f)
+        {
+        cout<<element<<" ";
+        }
+        cout<<'\n';
+
+        cout<<s.size()<<'\n';
+        for(auto element : s)
+        {
+        cout<<element<<" ";
         }
         cout<<'\n';
     }
