@@ -13,10 +13,10 @@ ll mod = 1e9 + 7;
 
 void solve(void)
 {
-    ll x,n,m,k,d,l=0;
+    ll x,n,m,k,d,l=0,r=LONG_LONG_MAX;
     cin>>n>>m>>k>>d;
-    vector<ll>v(n,0);
-    for (int  t=0;t<n;t++)
+    vector<ll>v(n+1,0);
+    for (int  t=1;t<=n;t++)
     {
         vector<ll>vec(m,0);
         multiset<ll>s;
@@ -33,19 +33,12 @@ void solve(void)
                 s.erase(s.find(vec[po++]));
             }
         }
-        v[t]=vec[m-1];
-    }
-
-    int r=0,sum=0;
-    for (int i = 0; i < k; i++)
-    {
-        sum+=v[i];
-    }
-    r=sum;
-    for (int i = k; i <n; i++)
-    {
-        sum=sum+(v[i]-v[i-k]);
-        r=min(r,sum);
+        v[t]=v[t-1]+vec[m-1];
+        if (t>=k)
+        {
+            r=min(r,(v[t]-v[t-k]));
+        }
+        
     }
     cout<<r<<'\n';
 }
