@@ -32,12 +32,12 @@ void solve(void)
     }
     else
     {
-        ll r=(n*n-n+1);
+        ll r=(m*m-m+1);
         if(m%2!=0)
-        r=r+(n+m)*(m-n);
+        r=r-(n+m);
         else
-        r=r+m*n;
-        
+        r=r+(n-m);
+
         cout<<r<<'\n';   
     }
 }
