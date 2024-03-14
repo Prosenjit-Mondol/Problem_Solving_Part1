@@ -34,9 +34,9 @@ void solve(void)
     {
         ll r=(m*m-m+1);
         if(m%2!=0)
-        r=r-(n+m);
+        r=r+(m-n);
         else
-        r=r+(n-m);
+        r=r-(m-n);
 
         cout<<r<<'\n';   
     }
