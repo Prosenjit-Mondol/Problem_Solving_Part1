@@ -15,8 +15,8 @@ void solve(void)
 {
     ll x,n,m,k,d,l=0;
     cin>>n>>m>>k>>d;
-    vector<ll>v(n+1,0);
-    for (int  t= 1;t<=n;t++)
+    vector<ll>v(n,0);
+    for (int  t=0;t<n;t++)
     {
         vector<ll>vec(m,0);
         multiset<ll>s;
@@ -33,12 +33,21 @@ void solve(void)
                 s.erase(s.find(vec[po++]));
             }
         }
-        for(auto element : vec)
-        {
-        cout<<element<<" ";
-        }
+        v[t]=vec[m-1];
     }
-    
+
+    int r=0,sum=0;
+    for (int i = 0; i < k; i++)
+    {
+        sum+=v[i];
+    }
+    r=sum;
+    for (int i = k; i <n; i++)
+    {
+        sum=sum+(v[i]-v[i-k]);
+        r=min(r,sum);
+    }
+    cout<<r<<'\n';
 }
 
 
