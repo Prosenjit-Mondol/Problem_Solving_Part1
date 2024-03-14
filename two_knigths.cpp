@@ -15,9 +15,9 @@ void solve(void)
 {
     ll n;
     cin>>n;
-    for (int i = 1; i <=n; i++)
+    for (ll i = 1; i <=n; i++)
     {
-        cout<<(i*i*(i*i-1)/2)-4*(i-1)*(i-2)<<'\n';
+        cout<<((i*i*(i*i-1)/2)-(4*(i-1)*(i-2)))<<'\n';
     }
     
 }
