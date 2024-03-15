@@ -20,59 +20,32 @@ void solve(void)
         int o;
         cin >> o;
         v.push_back(o);
-        if (b>o)
-        {
-            f=1;
-        }
-        b=o;
     }
-    if (f==0)
+    int cur=v[n-1];
+    for (int i =n-1; i>=0; i--)
     {
-        cout<<"YES"<<'\n';
-        return;
-    }
-    
-    for (int i = 0; i < n - 1; i++)
-    {
-        if (v[i] >=10)
+        if (v[i]>cur)
         {
-            int a = v[i] / 10;
-            int b = v[i] % 10;
-            if (v[i + 1] > 10)
-                c = v[i + 1] / 10;
-                
-            else
-                c = v[i + 1];
-
-            if ((b > a) && ((c >b)||(b<v[i+1])))
+            int a=v[i]%10;
+            int b=v[i]/10;
+            if (a>cur)
             {
-                v1.push_back(a);
-                v1.push_back(b);
+                f=1;
+                break;
             }
-
-            else
+            if (b>a)
             {
-                v1.push_back(v[i]);
+                f=1;
+                break;
             }
-        }
-        else
-        {
-            v1.push_back(v[i]);
+            cur=b;
+
         }
     }
-    
-    v1.push_back(v[n - 1]);
-
-
-    for (int i = 0; i < v1.size() - 1; i++)
-    {
-        if (v1[i] > v1[i + 1])
-        {
-            cout << "NO" << '\n';
-            return;
-        }
-    }
+    if(f==0)
     cout << "YES" << '\n';
+    else
+    cout << "NO" << '\n';
 }
 
 //------------------------------------------------------------------------------
