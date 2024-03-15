@@ -41,6 +41,11 @@ void solve(void)
             cur=b;
 
         }
+        else
+        {
+            cur=v[i];
+        }
+        
     }
     if(f==0)
     cout << "YES" << '\n';
