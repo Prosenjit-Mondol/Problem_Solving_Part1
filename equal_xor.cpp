@@ -13,11 +13,21 @@ ll mod = 1e9 + 7;
 
 void solve(void)
 {
-    int n;
-    cin>>n;
-    string s1,s2;
-    cin>>s1>>s2;
-    
+    int n,k;
+    cin>>n>>k;
+    vector<ll>v1,v2;
+    for(int i=0;i<n;i++)
+    {
+        ll o;
+        cin>>o;
+        v1.push_back(o);
+    }
+    for(int i=0;i<n;i++)
+    {
+        ll o;
+        cin>>o;
+        v2.push_back(o);
+    }
 }
 
 
