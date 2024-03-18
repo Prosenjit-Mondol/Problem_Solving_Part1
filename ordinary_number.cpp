@@ -13,17 +13,19 @@ ll mod = 1e9 + 7;
 
 void solve(void)
 {
-    ll n;
+    ll j,c=0,n;
     cin>>n;
-    if (n<10)
+    for (int i =1; i <=9; i++)
     {
-        cout<<n<<'\n';
+        j=i;
+        while (j<=n)
+        {
+            c++;
+            j=j*10+1;
+        }
+        
     }
-    else
-    {
-        ll r=n/10;
-        cout<<(r+8)<<'\n';
-    }
+    cout<<c<<'\n';
     
 }
 
