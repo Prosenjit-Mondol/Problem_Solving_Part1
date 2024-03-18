@@ -21,8 +21,8 @@ void solve(void)
         while (j<=n)
         {
             c++;
-            j=j*10+1;
-            if (j>=n)
+            j=i+j*10;
+            if (j>n) 
             {
                break;
             }
