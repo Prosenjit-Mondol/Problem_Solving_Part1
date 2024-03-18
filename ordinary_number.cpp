@@ -13,20 +13,16 @@ ll mod = 1e9 + 7;
 
 void solve(void)
 {
-    int n,k;
-    cin>>n>>k;
-    vector<ll>v1,v2;
-    for(int i=0;i<n;i++)
+    ll n;
+    cin>>n;
+    if (n<10)
     {
-        ll o;
-        cin>>o;
-        v1.push_back(o);
+        cout<<n<<'\n';
     }
-    for(int i=0;i<n;i++)
+    else
     {
-        ll o;
-        cin>>o;
-        v2.push_back(o);
+        ll r=n/10;
+        cout<<(r+8)<<'\n';
     }
     
 }
