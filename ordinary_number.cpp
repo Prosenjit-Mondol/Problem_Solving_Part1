@@ -22,7 +22,12 @@ void solve(void)
         {
             c++;
             j=j*10+1;
+            if (j>=n)
+        {
+            break;
         }
+        }
+        
         
     }
     cout<<c<<'\n';
