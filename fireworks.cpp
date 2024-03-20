@@ -15,7 +15,8 @@ void solve(void)
 {
     ll a,b,m;
     cin>>a>>b>>m;
-    
+    ll r=(m/a)+(m/b);
+    cout<<r+2<<'\n';
 }
 
 
