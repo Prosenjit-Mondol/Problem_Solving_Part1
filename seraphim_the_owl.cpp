@@ -33,12 +33,12 @@ void solve(void)
     {
         cost+=min(a[i],b[i]);
     }
-    for (int i =m-1; i>=0; i--)
-    {
-        mn=min(mn,cost+a[i]);
-        cost+=b[i];
-    }
-    cout<<mn<<'\n';
+    // for (int i =m-1; i>=0; i--)
+    // {
+    //     mn=min(mn,cost+a[i]);
+    //     cost+=b[i];
+    // }
+    cout<<cost<<'\n';
 }
 
 
