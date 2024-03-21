@@ -13,7 +13,7 @@ ll mod = 1e9 + 7;
 
 void solve(void)
 {
-    ll cost=0,mn=INT_MAX,n,m;
+    ll cost=0,mn=1e15,n,m;
     cin>>n>>m;
     vector<ll>a;
     for(int i=0;i<n;i++)
