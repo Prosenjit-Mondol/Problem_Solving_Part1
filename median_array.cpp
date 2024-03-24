@@ -22,32 +22,10 @@ void solve(void)
         v.push_back(o);
     }
     sort(v.begin(), v.end());
-    if (n % 2)
-    {
-        st = n / 2;
-        cnt=st+1;
-    }
-    else
-    {
-        st = n / 2;
-        cnt=st+1;
-        st -= 1;
-
-    }
-    set<int> s;
-    for (int i = st; i < n; i++)
-    {
-        s.insert(v[i]);
-    }
-    if (s.size() ==cnt)
-    {
-        cout << 1 << '\n';
-    }
-    else
-    {
-        cnt=cnt-s.size()+1;
-        cout << cnt << '\n';
-    }
+    int m=(n+1)/2-1;
+    int r=count(v.begin()+m,v.end(),v[m]);
+    cout<<r<<'\n';
+    
 }
 
 //------------------------------------------------------------------------------
