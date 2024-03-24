@@ -5,12 +5,6 @@
 using namespace std;
 
 int main() {
-    int n=2;
-    if (n&1)
-    {
-        cout<<"even";
-    }
-    else
-    cout<<"odd";
-    cout<<(n&1);
+    int n=-4545%12;
+    cout<<n;
 }
