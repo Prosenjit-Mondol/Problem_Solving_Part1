@@ -43,7 +43,6 @@ void solve(void)
             }
         }
     }
-    cout<<r<<mp[p];
     for (int i = 0; i <mp[p]; i++)
     {
         r+=p;

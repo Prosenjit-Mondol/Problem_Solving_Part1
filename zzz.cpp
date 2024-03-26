@@ -1,81 +1,63 @@
-#include <bits/stdc++.h>
+//Author  :  PROSENJIT MONDOL
+
+
+#include<bits/stdc++.h>
+#define lower(s) transform(s.begin(), s.end(), s.begin(), ::tolower);
+#define upper(s) transform(s.begin(), s.end(), s.begin(), ::toupper);
 using namespace std;
-using ll = long long;
-#define pb push_back
-#define all(f) (f).begin(), (f).end()
-#define rall(f) (f).rbegin(), (f).rend()
+const int inf = 3e5;
+using ll=long long ;
+ll mod = 1e9 + 7;
 
-int n, k;
-vector<ll> v;
-const int mod = 1e9 + 7;
+//------------------------------------------------------------------------------
 
-//---------------------------------------------------------------------------
-inline ll Norm(ll a, ll M)
+void solve(void)
 {
-     a %= M;
-     if (a < 0)
-          a += M;
-     return a;
-}
-inline ll modAdd(ll a, ll b, ll M)
-{
-     a = Norm(a, M), b = Norm(b, M);
-     return (a + b) % M;
-}
-inline ll modSub(ll a, ll b, ll M)
-{
-     a = Norm(a, M), b = Norm(b, M);
-     ll S = (a - b) % M;
-     if (S < 0)
-          S += M;
-     return S;
-}
+    string s;
+    cin>>s;
+    int n=s.length();
+    string ans(n,' ');
+    int freq[26];
+    for (int i = 0; i < n; i++) {
+        freq[s[i] - 'A'] += 1;
+    }
+    int cnt = 0;
+    for (int i = 0; i < 26; i++) {
+        if (freq[i] % 2 != 0) {
+            cnt += 1;
+        }
+    }
+    if (cnt > 1){
+        cout<<"NO SOLUTION"<<'\n';
+        return;
+    }
 
-ll mx_sum()
-{
-     ll cur = 0LL, mx = 0;
-     for (int i = 1; i <= n; i++)
-     {
-          cur += v[i];
-          mx = max(mx, cur);
-          cur = max(0LL, cur);
-     }
-     return mx;
+    int left = 0, right = n - 1;
+    for (int i = 0; i < n; i++) {
+        if (freq[s[i] - 'A'] % 2 == 1) {
+            ans[n/ 2] = s[i];
+            freq[s[i] - 'A'] -= 1;
+        }
+        while (freq[s[i] - 'A'] > 0) {
+            ans[left++] = ans[right--] = s[i];
+            freq[s[i] - 'A'] -= 2;
+        }
+    }
+    cout<<ans<<'\n';
 }
 
-void Solve()
-{
-     v.clear();
-     cin >> n >> k;
-     v.resize(n + 2);
-     ll tmp = 0;
-     for (int i = 1; i <= n; i++)
-     {
-          cin >> v[i];
-          tmp += v[i];
-     }
-     ll res = mx_sum();
-     tmp -= res;
-     for (int i = 1; i <= k; i++)
-     {
-          ll cur = res;
-          res = modAdd(cur, res, mod);
-          res %= mod;
-     }
-     tmp %= mod;
-     res = modAdd(res, tmp, mod);
-     cout << res << '\n';
-}
 
+//------------------------------------------------------------------------------
 int main()
 {
-     ios_base::sync_with_stdio(false);
-     cin.tie(NULL);
-     int tests = 1;
-     cin >> tests;
-     while (tests--)
-          Solve();
-     return 0;
-}
+ios_base::sync_with_stdio(false);
+cin.tie(NULL);
 
-// in the end, it doesn't even matter
+  ll t=1;
+  //cin>>t;
+    while(t--)
+     {
+       solve();
+     }
+return 0;
+}
