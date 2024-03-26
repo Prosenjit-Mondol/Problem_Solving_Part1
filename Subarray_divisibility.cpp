@@ -22,19 +22,30 @@ void solve(void)
         cin>>o;
         v.push_back(o);
     }
-    for (int i = 0; i <n; i++)
+
+    vector<ll>v1(n+1);
+    v1[0]=0;
+
+    for(int i=1;i<=n;i++)
     {
-        ll sum=0;
-        for (int j= i; j<n; j++)
+        v1[i]=v1[i-1]+v[i-1];
+        if (v1[i]<0)
         {
-            sum+=v[j];
-            if (sum%n==0)
-            {
-                c++;
-            }
-            
+            ll r=v1[i]%n;
+            r+=n;
+            v1[i]=r%n;
+        }
+        else
+        {
+            v1[i]=v1[i]%n;
         }
         
+    }
+    map<int,int>mp;
+    for (int i = 0; i <v1.size(); i++)
+    {
+        if(mp[v1[i]]) c++;
+        mp[v1[i]]++;
     }
     cout<<c<<'\n';
 }
