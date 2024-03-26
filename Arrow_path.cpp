@@ -17,6 +17,20 @@ void solve(void)
     cin>>n;
     string s1,s2;
     cin>>s1>>s2;
+    map<int,int>mp;
+    if (s1[0]=='<')
+    {
+      
+    }
+    
+    for (int i = 1; i <n; i++)
+    {
+      if (s1[i]=='<')
+      {
+        mp[i-1]=i;
+        break;
+      }
+    }
     
 }
 
