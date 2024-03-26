@@ -51,7 +51,6 @@ void solve(void)
             v.pop_back();
 
         }
-        cout<<ans<<" ";
     }
     cout<<ans<<'\n';
 }
