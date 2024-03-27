@@ -19,10 +19,12 @@ void solve(void)
   for (int i = 0; i < n; i++)
   {
     int size = gray_code.size();
+
     for (int j = size - 1; j >= 0; j--)
     {
       gray_code.push_back(gray_code[j]);
     }
+
     size *= 2;
     for (int j = 0; j < size; j++)
     {
@@ -35,6 +37,7 @@ void solve(void)
         gray_code[j] += "1";
       }
     }
+    cout<<gray_code[0]<<" ";
   }
 
   for (auto el:gray_code)
