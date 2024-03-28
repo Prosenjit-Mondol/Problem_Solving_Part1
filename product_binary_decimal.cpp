@@ -19,6 +19,7 @@ bool isBinaryDecimal(int num) {
     }
     return true;
 }
+
 void solve(void)
 {
     int n;
@@ -40,32 +41,22 @@ void solve(void)
         cout<<"YES"<<'\n';
         return;
     }
-
-    for(auto el : v)
+    for (int i = 0; i < v.size(); i++)
     {
-       if (n%el==0&&(n/el)*el==n)
-       {
-        int x=n/el;
-        auto t=find(v.begin(),v.end(),x);
-        if(t!=v.end()){
-            cout<<"YES"<<'\n';
-            return;
-        }
-        for (int i = 0; i<v.size(); i++)
+        while (n%v[i]==0)
         {
-            if (x%v[i]==0)
+            n/=v[i];
+            if (n==1)
             {
                 cout<<"YES"<<'\n';
                 return;
             }
+            
         }
-       }
-       
+        
     }
     cout<<"NO"<<'\n';
-    v.clear();
 }
-
 
 //------------------------------------------------------------------------------
 int main()
