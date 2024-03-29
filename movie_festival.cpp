@@ -10,37 +10,33 @@ using ll=long long ;
 ll mod = 1e9 + 7;
 
 //------------------------------------------------------------------------------
-
+bool cmt(pair<int,int>&p1,pair<int,int>&p2){
+    return p1.second<p2.second;
+}
 void solve(void)
 {
-    l n;
+    ll n;
     cin>>n;
-    vector<ll>a,b;
+    vector<pair<int,int>>v;
     for(int i=0;i<n;i++)
     {
         ll x,y;
         cin>>x>>y;
-        a.push_back(x);
-        b.push_back(y);
+        v.push_back({x,y});
     }
-    sort(a.begin(),a.end());
-    sort(b.begin(),b.end());
-    int i=0,j=0,ma=0,ans=0;
-    while (i<n&&j<n)
+    sort(v.begin(),v.end(),cmt);
+    int ma=0,ans=0;
+    for (int i = 0; i <n; i++)
     {
-        if (a[i]<b[j])
+        if (v[i].first>=ma)
         {
             ans++;
-            ma=max(ma,ans);
-            i++;
+            ma=v[i].second;
         }
-        else
-        {
-            j++;
-            ans--;
-        }
+        
     }
-    cout<<ma<<'\n';
+    
+    cout<<ans<<'\n';
 }
 
 
@@ -51,7 +47,7 @@ ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
   ll t=1;
-  cin>>t;
+  //cin>>t;
     while(t--)
      {
        solve();
