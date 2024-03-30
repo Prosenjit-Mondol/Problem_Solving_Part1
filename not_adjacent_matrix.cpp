@@ -28,10 +28,10 @@ void solve(void)
         int k=1,st,nn=n*n;
         if (nn%2)
         {
-            st=nn/2+1;
+            st=nn/2+2;
         }
         else
-        st=nn/2;
+        st=nn/2+1;
         for (int i = 1; i <=n; i++)
         {
             for (int j = 1;j<=n; j++)
