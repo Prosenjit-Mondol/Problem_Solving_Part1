@@ -13,20 +13,43 @@ ll mod = 1e9 + 7;
 
 void solve(void)
 {
-    ll n,q;
+    ll ans=0,n,q;
     cin>>n>>q;
-    vector<ll>v(n,10);
+    vector<ll>v;
     for(int i=0;i<n;i++)
     {
         ll o;
         cin>>o;
         v.push_back(o);
+        ans+=o;
     }
-    v(n,10);
-    for(auto element : v)
+    for (int i = 0; i <q; i++)
     {
-    cout<<element<<" ";
+        int a;
+        cin>>a;
+        if (a==2)
+        {
+            ll x;
+            cin>>x;
+            cout<<n*x<<'\n';
+            for (int i = 0; i < n; i++)
+            {
+                v[i]=x;
+            }
+            ans=n*x;
+        }
+        else
+        {
+            ll p,x;
+            cin>>p>>x;
+            ans-=v[p-1];
+            v[p-1]=x;
+            ans+=x;
+            cout<<ans<<'\n';
+        }
+        
     }
+    
 }
 
 
