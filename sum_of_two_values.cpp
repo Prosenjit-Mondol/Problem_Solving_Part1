@@ -22,19 +22,22 @@ void solve(void)
         cin>>o;
         v.push_back(o);
     }
-    for (int i = 0; i <n-1; i++)
+    map<ll,ll>mp;
+    bool f=true;
+    for (ll i = 0; i <n; i++)
     {
-        for (int j = i+1; j<n;j++)
+        if (f)
         {
-            if (v[i]+v[j]==x)
+            if (mp.find(x-v[i])!=mp.end())
             {
-                cout<<i+1<<" "<<j+1<<'\n';
-                return;
+                cout<<(*(mp.find(x-v[i]))).second<<" "<<i+1<<'\n';
+                f=false;
             }
-            
+            mp.insert({v[i],i+1});
         }
         
     }
+    if(f)
     cout<<"IMPOSSIBLE"<<'\n';
 }
 
