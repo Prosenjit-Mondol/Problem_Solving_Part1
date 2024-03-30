@@ -15,12 +15,12 @@ void solve(void)
 {
     ll l=0,ans=0,n,q;
     cin>>n>>q;
-    vector<ll>v;
-    for(int i=0;i<n;i++)
+    map<ll,ll>mp;
+    for(int i=1;i<=n;i++)
     {
         ll o;
         cin>>o;
-        v.push_back(o);
+        mp[i]=o;
         ans+=o;
     }
     for (int i = 0; i <q; i++)
@@ -31,19 +31,23 @@ void solve(void)
         {
             ll x;
             cin>>x;
-            v.clear();
             ans=n*x;
             l=x;
+            mp.clear();
         }
         else
         {
             ll p,x;
             cin>>p>>x;
-            ans-=l;
-            v[p-1]=x;
-            ans+=x;
-            
-            l=x;
+            if (mp[p]==0)
+            {
+                ans+=(x-l);
+                mp[p]=x;
+            }
+            else{
+                ans+=(x-mp[p]);
+                mp[p]=x;
+            }
         }
         cout<<ans<<'\n';
     }
