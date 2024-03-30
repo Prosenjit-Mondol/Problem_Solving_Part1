@@ -10,18 +10,29 @@ using ll=long long ;
 ll mod = 1e9 + 7;
 
 //------------------------------------------------------------------------------
+int x;
+bool vis[x];
+vector<int>adj(x);
 
+void dfs(int s){
+    if (vis[s]) return;
+    else vis[s]=true;
+    for ( auto u: adj[s])
+    {
+        dfs(u);
+    }
+    
+}
 void solve(void)
 {
-    int x;
     cin>>x;
-    ll ans=0;
-    for (int i =31; i>=0; i--)
+    dfs(0);
+    if (vis[x])
     {
-    if (x&(1<<i)) ans=ans*10+1;
-    else ans*=10;
+        cout<<1;
     }
-    cout<<ans<<'\n';
+    else
+    cout<<0;
 }
 
 
