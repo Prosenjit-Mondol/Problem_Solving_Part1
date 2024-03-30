@@ -13,7 +13,7 @@ ll mod = 1e9 + 7;
 
 void solve(void)
 {
-    ll ans=0,n,q;
+    ll l=0,ans=0,n,q;
     cin>>n>>q;
     vector<ll>v;
     for(int i=0;i<n;i++)
@@ -31,23 +31,21 @@ void solve(void)
         {
             ll x;
             cin>>x;
-            cout<<n*x<<'\n';
-            for (int i = 0; i < n; i++)
-            {
-                v[i]=x;
-            }
+            v.clear();
             ans=n*x;
+            l=x;
         }
         else
         {
             ll p,x;
             cin>>p>>x;
-            ans-=v[p-1];
+            ans-=l;
             v[p-1]=x;
             ans+=x;
-            cout<<ans<<'\n';
+            
+            l=x;
         }
-        
+        cout<<ans<<'\n';
     }
     
 }
