@@ -32,9 +32,8 @@ void solve(void)
             return;
         }
         x+=v[i];
-        cout<<x<<" ";
     }
-    
+    cout<<x<<'\n';
 }
 
 
