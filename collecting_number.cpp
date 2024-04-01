@@ -13,7 +13,7 @@ ll mod = 1e9 + 7;
 
 void solve(void)
 {
-    int ma=1,c=0,n;
+    int c=1,n;
     cin>>n;
     vector<ll>v;
     for(int i=0;i<n;i++)
@@ -26,13 +26,10 @@ void solve(void)
     {
         if (v[i]>v[i-1])
         {
-            c=0;
+            c+=2;
         }
-        else
-        c++;
-        ma=max(ma,c);
     }
-    cout<<ma+1<<'\n';
+    cout<<c<<'\n';
 }
 
 
