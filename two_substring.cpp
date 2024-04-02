@@ -28,7 +28,38 @@ void solve(void)
             b=1;
             i+=2;
         }
+        if (a==1&&b==1)
+       {
+           cout<<"YES"<<'\n';
+           return;
+        }
+
     }
+    if (a!=1||b!=1)
+    {
+        a=0,b=0;
+        for (int i = 0; i <s.size()-1; i++)
+    {
+        if (s[i]=='B'&& s[i+1]=='A'&&b==0)
+        {
+            b=1;
+            i+=2;
+        }
+        if (s[i]=='A'&&s[i+1]=='B'&&a==0)
+        {
+            a=1;
+            i+=2;
+        }
+        
+        if (a==1&&b==1)
+       {
+           cout<<"YES"<<'\n';
+           return;
+        }
+
+    }
+    }
+    
     if (a==1&&b==1)
     {
         cout<<"YES"<<'\n';
