@@ -13,29 +13,14 @@ ll mod = 1e9 + 7;
 
 void solve(void)
 {
-    int n,k;
-    cin>>n>>k;
-    if (n==k)
+    string s;
+    cin>>s;
+    if (s=="it"||s=="submit"||s=="timelimitexceeded")
     {
-        for (int i = 0; i <n; i++)
-        {
-            cout<<1<<" ";
-        }
-        cout<<'\n';
-    }
-    else if (k==1)
-    {
-        for (int i = 1; i <=n; i++)
-        {
-            cout<<i<<" ";
-        }
-        cout<<'\n';
+        cout<<"YES"<<'\n';
     }
     else
-    {
-        cout<<-1<<'\n';
-    }
-    
+    cout<<"NO"<<'\n';
 }
 
 

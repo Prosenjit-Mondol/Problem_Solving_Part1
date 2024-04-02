@@ -13,29 +13,7 @@ ll mod = 1e9 + 7;
 
 void solve(void)
 {
-    int n,k;
-    cin>>n>>k;
-    if (n==k)
-    {
-        for (int i = 0; i <n; i++)
-        {
-            cout<<1<<" ";
-        }
-        cout<<'\n';
-    }
-    else if (k==1)
-    {
-        for (int i = 1; i <=n; i++)
-        {
-            cout<<i<<" ";
-        }
-        cout<<'\n';
-    }
-    else
-    {
-        cout<<-1<<'\n';
-    }
-    
+    cout<<"stnafty"<<'\n';
 }
 
 
@@ -46,7 +24,7 @@ ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
   ll t=1;
-  cin>>t;
+  //cin>>t;
     while(t--)
      {
        solve();
