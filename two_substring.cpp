@@ -38,17 +38,17 @@ void solve(void)
     if (a!=1||b!=1)
     {
         a=0,b=0;
-        for (int i = 0; i <s.size()-1; i++)
+        for (int i =s.size()-1; i>0; i--)
     {
-        if (s[i]=='B'&& s[i+1]=='A'&&b==0)
+        if (s[i]=='B'&& s[i-1]=='A'&&b==0)
         {
             b=1;
-            i+=2;
+            i-=2;
         }
-        if (s[i]=='A'&&s[i+1]=='B'&&a==0)
+        if (s[i]=='A'&&s[i-1]=='B'&&a==0)
         {
             a=1;
-            i+=2;
+            i-=2;
         }
         
         if (a==1&&b==1)
