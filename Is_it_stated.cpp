@@ -15,11 +15,15 @@ void solve(void)
 {
     string s;
     cin>>s;
-    if (s=="it"||s=="submit"||s=="timelimitexceeded"||s=="ithinkthisisgood")
+    for (int i = 0; i <s.size()-1; i++)
     {
+      if (s[i]=='i'&&s[i+1]=='t')
+      {
         cout<<"YES"<<'\n';
+        return;
+      }
+      
     }
-    else
     cout<<"NO"<<'\n';
 }
 
