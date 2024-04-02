@@ -18,15 +18,15 @@ void solve(void)
     int a=0,b=0;
     for (int i = 0; i <s.size()-1; i++)
     {
-        if (s[i]=='A'&&s[i+1]=='B')
+        if (s[i]=='A'&&s[i+1]=='B'&&a==0)
         {
             a=1;
-            i++;
+            i+=2;
         }
-        else if (s[i]=='B'&& s[i+1]=='A')
+        if (s[i]=='B'&& s[i+1]=='A'&&b==0)
         {
             b=1;
-            i++;
+            i+=2;
         }
     }
     if (a==1&&b==1)
