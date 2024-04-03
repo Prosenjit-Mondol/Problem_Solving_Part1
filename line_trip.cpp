@@ -13,7 +13,28 @@ ll mod = 1e9 + 7;
 
 void solve(void)
 {
-  cout<<4<<'\n';
+    int n,x;
+    cin>>n>>x;
+    vector<int>v;
+    for(int i=0;i<n;i++)
+    {
+        int o;
+        cin>>o;
+        v.push_back(o);
+    }
+    if (n==1)
+    {
+        cout<<v[0]<<'\n';
+        return;
+    }
+    
+    int ma=0;
+    for (int i = 0; i <n-1; i++)
+    {
+        ma=max(ma,(v[i+1]-v[i]));
+    }
+    ma=max(ma,2*(x-v[n-1]));
+    cout<<ma<<'\n';
 }
 
 
@@ -24,7 +45,7 @@ ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
   ll t=1;
-  //cin>>t;
+  cin>>t;
     while(t--)
      {
        solve();
