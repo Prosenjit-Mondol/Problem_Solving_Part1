@@ -22,7 +22,7 @@ void solve(void)
     else
     {
         int c=0;
-        while (n!=m)
+        while (n<m)
         {
             c++;
             ll x=n*3;
@@ -32,8 +32,10 @@ void solve(void)
             }
             else
             {
-                n=x*2;
+                n=n*2;
             }
+            cout<<n<<" ";
+            
             
         }
         cout<<c<<'\n';
