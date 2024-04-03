@@ -13,37 +13,33 @@ ll mod = 1e9 + 7;
 
 void solve(void)
 {
-    ll n,m;
-    cin>>n>>m;
-    if (m%n)
+    int n;
+    cin>>n;
+    vector<int>v;
+    for(int i=0;i<n;i++)
     {
-        cout<<-1<<'\n';
+        int o;
+        cin>>o;
+        v.push_back(o);
     }
-    else
+    int x=0,c=0;
+    if (v[0]==1&&v[n-1]==1)
     {
-        int c=0;
-        while (n<m)
-        {
-            c++;
-            ll x=n*3;
-            if (m%x==0)
-            {
-                n=x;
-            }
-            else
-            {
-                n=n*2;
-            }
-        }
-        if (n==m)
-        {
-            cout<<c<<'\n';
-        }
-        else
-        cout<<-1<<'\n';
-        
+        c=2;
     }
-    
+    for (int i = 0; i < n; i++)
+    {
+        if (v[i]==0)
+        {
+            x=0;
+        }
+        if (v[i]==1)
+        {
+            x++;
+        }
+        c=max(x,c);
+    }
+    cout<<c<<'\n';
 }
 
 
