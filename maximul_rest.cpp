@@ -13,7 +13,7 @@ ll mod = 1e9 + 7;
 
 void solve(void)
 {
-    int n;
+    int ma=0,c=0,n;
     cin>>n;
     vector<int>v;
     for(int i=0;i<n;i++)
@@ -21,25 +21,33 @@ void solve(void)
         int o;
         cin>>o;
         v.push_back(o);
+        if(o==1)
+        c++;
+        else
+        c=0;
+        ma=max(ma,c);
     }
-    int x=0,c=0;
-    if (v[0]==1&&v[n-1]==1)
+    c=0;
+    for (int i =0; i < n; i++)
     {
-        c=2;
-    }
-    for (int i = 0; i < n; i++)
-    {
-        if (v[i]==0)
-        {
-            x=0;
-        }
         if (v[i]==1)
         {
-            x++;
+            c++;
         }
-        c=max(x,c);
+        else
+        break;
     }
-    cout<<c<<'\n';
+    for (int i =n-1; i>=0; i--)
+    {
+        if (v[i]==1)
+        {
+            c++;
+        }
+        else
+        break;
+    }
+    ma=max(ma,c);
+    cout<<ma<<'\n';
 }
 
 
