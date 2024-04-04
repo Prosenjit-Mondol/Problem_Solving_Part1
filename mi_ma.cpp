@@ -13,29 +13,17 @@ ll mod = 1e9 + 7;
 
 void solve(void)
 {
-    int n,x;
-    cin>>n>>x;
-    vector<int>v;
-    v.push_back(0);
-    for(int i=1;i<=n;i++)
+    int a,b,c,d;
+    cin>>a>>b>>c>>d;
+    if (max(a,c)<=min(b,d))
     {
-        int o;
-        cin>>o;
-        v.push_back(o);
+        cout<<max(a,c)<<'\n';
     }
-    if (n==1)
+    else
     {
-        cout<<max(v[1],2*(x-v[1]))<<'\n';
-        return;
+        cout<<(a+c)<<'\n';
     }
     
-    int ma=0;
-    for (int i = 1; i <=n; i++)
-    {
-        ma=max(ma,(v[i]-v[i-1]));
-    }
-    ma=max(ma,2*(x-v[n]));
-    cout<<ma<<'\n';
 }
 
 
