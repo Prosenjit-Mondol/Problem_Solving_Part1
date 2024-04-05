@@ -10,22 +10,12 @@ using ll=long long ;
 ll mod = 1e9 + 7;
 
 //------------------------------------------------------------------------------
-void pr(string su){
-    ll cnt=0;
-    string ch=su;
-    do
+ll fact(int n){
+    if (n==1)
     {
-        cnt++;
-        cnt=cnt%mod;
-    } while (next_permutation(su.begin(),su.end()));
-    if (cnt<10)
-    {
-        cnt--;
-        cout<<cnt<<'\n';
+        return 1;
     }
-    else
-    cout<<cnt<<'\n';
-
+    return n*fact(n-1)%mod;
 }
 void solve(void)
 {
@@ -33,16 +23,9 @@ void solve(void)
     cin>>n>>q;
     string s;
     cin>>s;
-    for (int i = 0; i < q; i++)
-    {
-        int a,b;
-        cin>>a>>b;
-
-        string su=s.substr(a-1,b-a+1);
-        pr(su);
-    }
-    
-    
+    int l=s.size();
+    ll f=fact(l);
+    cout<<f;
 }
 
 
