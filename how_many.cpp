@@ -10,36 +10,15 @@ using ll=long long ;
 ll mod = 1e9 + 7;
 
 //------------------------------------------------------------------------------
-ll fact(int n){
-    if (n==1)
-    {
-        return 1;
-    }
-    return n*fact(n-1)%mod;
-}
-void solve(void)
-{
-    int n,q;
-    cin>>n>>q;
-    string s;
-    cin>>s;
-    int l=s.size();
-    ll f=fact(l);
-    cout<<f;
-}
-
+ll copy(ll a,ll b)
 
 //------------------------------------------------------------------------------
 int main()
 {
-ios_base::sync_with_stdio(false);
-cin.tie(NULL);
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
 
-  ll t=1;
-  //cin>>t;
-    while(t--)
-     {
-       solve();
-     }
-return 0;
+
+
+    return 0;
 }
