@@ -13,19 +13,35 @@ ll mod = 1e9 + 7;
 
 void solve(void)
 {
-    ll n;
-    cin>>n;
-    ll a=1;
-    for (int i = 2; i*i <=n; i++)
+    ll x=0,n,a,b;
+    cin>>n>>a>>b;
+    if (n<=a)
     {
-        if (n%i==0)
-        {
-            a=n/i;
-            break;
-        }
-        
+        cout<<1<<'\n';
     }
-    cout<<a<<" "<<n-a<<'\n';
+    else if (a<=b)
+    {
+        ll ex=n/a;
+        if (ex*a==n)
+        {
+            cout<<ex<<'\n';
+        }
+        else
+        {
+            cout<<ex+1<<'\n';
+        }
+    }
+    else
+    {
+        int c=0;
+        while (x<n)
+        {
+            c++;
+            x+=a+(a-b);
+        }
+        cout<<c<<'\n';
+    }
+    
 }
 
 
