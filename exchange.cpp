@@ -33,13 +33,7 @@ void solve(void)
     }
     else
     {
-        int c=0;
-        while (x<n)
-        {
-            c++;
-            x+=a+(a-b);
-        }
-        cout<<c<<'\n';
+        cout<<1<<'\n';
     }
     
 }
