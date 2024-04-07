@@ -23,11 +23,11 @@ void solve(void)
       }
       for (int j= 0;j<=i; j++)
       {
-        cout<<" "<<j;
+        cout<<j<<" ";
       }
       for (int j=i-1;j>=0; j--)
       {
-        cout<<" "<<j;
+        cout<<j<<" ";
       }
       cout<<'\n';
     }
@@ -39,11 +39,11 @@ void solve(void)
       }
       for (int j= 0;j<=i; j++)
       {
-        cout<<" "<<j;
+        cout<<j<<" ";
       }
       for (int j=i-1;j>=0; j--)
       {
-        cout<<" "<<j;
+        cout<<j<<" ";
       }
       cout<<'\n';
     }
