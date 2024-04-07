@@ -1,5 +1,6 @@
 //Author  :  PROSENJIT MONDOL
 
+
 #include<bits/stdc++.h>
 #define lower(s) transform(s.begin(), s.end(), s.begin(), ::tolower);
 #define upper(s) transform(s.begin(), s.end(), s.begin(), ::toupper);
@@ -12,27 +13,23 @@ ll mod = 1e9 + 7;
 
 void solve(void)
 {
-    ll n,s;
-    cin>>n>>s;
-    map<ll,ll>mp;
-    for(int i=1;i<=n;i++)
+    ll mx=INT_MAX,n;
+    cin>>n;
+    vector<ll>v;
+    ll sum=0;
+    for(int i=0;i<n*n;i++)
     {
         ll o;
         cin>>o;
-        mp[o]=i;
+        v.push_back(o);
+        sum+=o;
     }
-    int c=0;
-    for (int i = 0; i <n-1; i++)
+    for (int i = 1; i <n*n-1; i++)
     {
-        ll a,b;
-        cin>>a>>b;
-        if (mp[a]<mp[b])
-        {
-            c++;
-        }
-        
+        mx=min(mx,v[i]);
     }
-    cout<<c<<'\n';
+    
+    cout<<(sum-mx)<<'\n';
 }
 
 
@@ -46,7 +43,7 @@ cin.tie(NULL);
   //cin>>t;
     while(t--)
      {
-      solve();
+       solve();
      }
 return 0;
 }
