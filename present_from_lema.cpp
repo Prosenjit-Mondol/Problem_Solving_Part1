@@ -21,15 +21,21 @@ void solve(void)
       {
         cout<<" ";
       }
+      if (i==0)
+      {
+        cout<<0<<'\n';
+        continue;
+      }
+      
       for (int j= 0;j<=i; j++)
       {
         cout<<j<<" ";
       }
-      for (int j=i-1;j>=0; j--)
+      for (int j=i-1;j>0; j--)
       {
         cout<<j<<" ";
       }
-      cout<<'\n';
+      cout<<0<<'\n';
     }
     for (int i =n-1; i>=0; i--)
     {
@@ -37,15 +43,20 @@ void solve(void)
       {
         cout<<" ";
       }
+      if (i==0)
+      {
+        cout<<0<<'\n';
+        continue;
+      }
       for (int j= 0;j<=i; j++)
       {
         cout<<j<<" ";
       }
-      for (int j=i-1;j>=0; j--)
+      for (int j=i-1;j>0; j--)
       {
         cout<<j<<" ";
       }
-      cout<<'\n';
+      cout<<0<<'\n';
     }
 }
 
