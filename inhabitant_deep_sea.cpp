@@ -13,7 +13,7 @@ ll mod = 1e9 + 7;
 
 void solve(void)
 {
-    ll n,k;
+    ll sum=0,n,k;
     cin>>n>>k;
     vector<ll>v;
     for(int i=0;i<n;i++)
@@ -21,27 +21,37 @@ void solve(void)
         ll o;
         cin>>o;
         v.push_back(o);
+        sum+=o;
     }
-    int c=0,f=0,l=n-1;
-    for (int i = 1; i <=k; i++)
+    if (sum<=k)
     {
-        if (i%2)
+        cout<<n<<'\n';
+        return;
+    }
+    ll c=0,x=(k+1)/2;
+    for (int i = 0; i <n; i++)
+    {
+        if (v[i]<=x)
         {
-            v[f]=v[f]-1;
-            if (v[f]==0)
-            {
-                c++;
-                f++;
-            }
+            x-=v[i];
+            c++;
         }
         else
         {
-            v[l]=v[l]-1;
-            if (v[l]==0)
-            {
-                c++;
-                l--;
-            }
+            break;
+        }
+    }
+    x=k/2;
+    for (int i =n-1; i>=0; i--)
+    {
+        if (v[i]<=x)
+        {
+            x-=v[i];
+            c++;
+        }
+        else
+        {
+            break;
         }
     }
     
