@@ -16,44 +16,30 @@ void solve(void)
     int n,m;
     cin>>n>>m;
     vector<ll>v;
-    priority_queue<int>pq;
     ll s=0,r=0,sum=0;
     for(int i=0;i<m;i++)
     {
         ll o;
         cin>>o;
         v.push_back(o);
-        pq.push(o);
-        sum+=o;
     }
-    for (int i = 0; i <n; i++)
-    {
-        int temp=pq.top();
-        s+=temp;
-        temp--;
-        pq.push(temp);
-    }
-    
-    sort(v.begin(),v.end());
-    int c=0;
     for (int i = 0; i <m; i++)
     {
-        while (v[i]>1)
+        for (int j=v[i];j>=1;j--)
         {
-            r+=v[i];
-            v[i]--;
-            c++;
-            if (c==n)
-            {
-                break;
-            }
-            
-        }
-        if (c==n)
-        {
-            break;
+            v.push_back(j);
         }
         
+    }
+    sort(v.begin(),v.end());
+    for (int i = 0; i <n; i++)
+    {
+        r+=v[i];
+    }
+    sort(v.rbegin(),v.rend());
+    for (int i = 0; i <n; i++)
+    {
+        s+=v[i];
     }
     cout<<s<<" "<<r<<'\n';
     
