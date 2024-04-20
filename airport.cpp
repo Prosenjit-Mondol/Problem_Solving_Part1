@@ -15,18 +15,21 @@ void solve(void)
 {
     int n,m;
     cin>>n>>m;
-    int a[n];
     vector<ll>vv;
     ll s=0,r=0,sum=0;
+
+
+    vector<ll>v;
     for(int i=0;i<m;i++)
     {
-        cin>>a[i];
+        ll o;
+        cin>>o;
+        v.push_back(o);
     }
-    sort(a,a+n);
-
+    sort(v.begin(),v.end());
     for (int i = 0; i <m; i++)
     {
-        for (int j=a[i];j>=1;j--)
+        for (int j=v[i];j>=1;j--)
         {
             vv.push_back(j);
         }
