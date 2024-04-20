@@ -15,31 +15,31 @@ void solve(void)
 {
     int n,m;
     cin>>n>>m;
-    vector<ll>v;
+    int a[n];
+    vector<ll>vv;
     ll s=0,r=0,sum=0;
     for(int i=0;i<m;i++)
     {
-        ll o;
-        cin>>o;
-        v.push_back(o);
+        cin>>a[i];
     }
+    sort(a,a+n);
+
     for (int i = 0; i <m; i++)
     {
-        for (int j=v[i];j>=1;j--)
+        for (int j=a[i];j>=1;j--)
         {
-            v.push_back(j);
+            vv.push_back(j);
         }
         
     }
-    sort(v.begin(),v.end());
     for (int i = 0; i <n; i++)
     {
-        r+=v[i];
+        r+=vv[i];
     }
-    sort(v.rbegin(),v.rend());
+    sort(vv.rbegin(),vv.rend());
     for (int i = 0; i <n; i++)
     {
-        s+=v[i];
+        s+=vv[i];
     }
     cout<<s<<" "<<r<<'\n';
     
