@@ -15,7 +15,7 @@ void solve(void)
 {
     int n,m,k;
     cin>>n>>m>>k;
-    if ((n-(n/m+n%m!=0))<=k)
+    if ((n-((n/m)+(n%m!=0)))<=k)
     {
         cout<<"NO"<<'\n';
     }
