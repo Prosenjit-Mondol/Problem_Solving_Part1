@@ -17,7 +17,7 @@ void solve(void)
     cin>>n>>w>>y;
     double p=(n*y)/100;
     p=ceil(p);
-    if (p-w)
+    if ((p-w)>0)
     {
         cout<<(p-w)<<'\n';
     }
