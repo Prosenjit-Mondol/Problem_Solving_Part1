@@ -29,76 +29,64 @@ void solve(void)
             z++;
     }
 
-    if (vn.size()==0&&vp.size()==0)
+    if (vn.size()==0)
     {
-        cout << 1 << " " << -1 << '\n';
-        cout << 2 << " " << 1 << '\n';
-        cout << 1<<" "<<0;
-        for (int i = 1; i < z; i++)
+        cout<<1<<" "<<-1<<'\n';
+    }
+    else
+    {
+        cout<<1<<" "<<vn[vn.size()-1]<<'\n';
+        vn.pop_back();
+    }
+    
+
+    if (vp.size()<2)
+    {
+        if (vn.size()>=2&&vp.size()==0)
         {
-            cout << " " << 0;
+            cout<<2<<" "<<vn[vn.size()-1]<<" "<<vn[vn.size()-2]<<'\n';
+            vn.pop_back();
+            vn.pop_back();
+        }
+        else if(vp.size()==1)
+        {
+            cout<<(10000-vp[0])<<" "<<vp[0]<<'\n';
+        }
+        
+    }
+    else
+    {
+        cout<<vp[0];
+        for (int i = 1; i < vp.size(); i++)
+        {
+            cout<<" "<<vp[i];
         }
         cout<<'\n';
     }
     
-    else if (vn.size() == 0)
+    if (z==0)
     {
-        cout << 1 << " " << -1 << '\n';
-        cout << 2;
-        for (int i = 0; i < vp.size(); i++)
+        cout<<1<<" "<<0;
+        for (int i = 0; i < vn.size(); i++)
         {
-            cout << " " << vp[i];
-        }
-        cout << '\n';
-        cout << 1<<" "<<0;
-        for (int i = 1; i < z; i++)
-        {
-            cout << " " << 0;
+            cout<<" "<<vn[i];
         }
         cout<<'\n';
-
     }
-
-    else if (vp.size() == 0)
-    {
-        cout << 1 << " " << vn[0] << '\n';
-        cout << 2 << " " << vn[1] << " " << vn[2]<<'\n';
-
-        cout << 1<<" "<<0;
-        for (int i = 1; i < z; i++)
-        {
-            cout << " " << 0;
-        }
-        for (int i = 3; i < vn.size(); i++)
-        {
-            cout << " " << vn[i];
-        }
-        cout << '\n';
-    }
-
-
     else
     {
-        cout << 1 << " " << vn[0] << '\n';
-
-        cout << 2;
-        for (int i = 0; i < vp.size(); i++)
+        cout<<1;
+        for (int i = 0; i <z; i++)
         {
-            cout << " " << vp[i];
+            cout<<" "<<0;
         }
-        cout << '\n';
-
-        cout << 1<<" "<<0;
-        for (int i = 1; i < z; i++)
+        for (int i = 0; i < vn.size(); i++)
         {
-            cout << " " << 0;
+            cout<<" "<<vn[i];
         }
-        for (int i = 1; i < vn.size(); i++)
-        {
-            cout << " " << vn[i];
-        }
-        cout << '\n';
+        cout<<'\n';
     }
+    
 }
 
 //------------------------------------------------------------------------------
