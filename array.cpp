@@ -46,6 +46,22 @@ void solve(void)
         else
         cout<<2<<" "<<vn[1]<<" "<<vn[2]<<'\n';
     }
+    else
+    {
+        cout<<1;
+        for (int i = 0; i <vn.size(); i++)
+        {
+            cout<<" "<<vn[i];
+        }
+        cout<<'\n';
+        cout<<1;
+        for (int i = 0; i <vp.size(); i++)
+        {
+            cout<<" "<<vp[i];
+        }
+        cout<<'\n';
+    }
+    
     cout<<1;
     for (int i = 0; i <z; i++)
     {
