@@ -1,0 +1,1 @@
+{"name":"Local: array","url":"c:\\Languages\\Problem_solving\\C-Code\\array.cpp","tests":[{"id":1713693503699,"input":"5\n-1 -2 1 2 0","output":"1 -1\n2 1 2\n2 0 -2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Languages\\Problem_solving\\C-Code\\array.cpp","group":"local","local":true}
