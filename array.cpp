@@ -14,7 +14,7 @@ void solve(void)
 {
     int z = 0, n;
     cin >> n;
-    vector<ll> vp, vn;
+    vector<ll> vp, vn, v1, v2, v3;
     for (int i = 0; i < n; i++)
     {
         ll o;
@@ -28,65 +28,50 @@ void solve(void)
         else
             z++;
     }
+    v1.push_back(vn[vn.size() - 1]);
+    vn.pop_back();
 
-    if (vn.size()==0)
+    if (vp.size() == 0)
     {
-        cout<<1<<" "<<-1<<'\n';
-    }
-    else
-    {
-        cout<<1<<" "<<vn[vn.size()-1]<<'\n';
+        v2.push_back(vn[vn.size() - 1]);
+        vn.pop_back();
+        v2.push_back(vn[vn.size() - 1]);
         vn.pop_back();
     }
-    
+    else
+    {
+        for (int i = 0; i < vp.size(); i++)
+        {
+            v2.push_back(vp[i]);
+        }
+    }
+    for (int i = 0; i < z; i++)
+    {
+        v3.push_back(0);
+    }
+    for (int i = 0; i < vn.size(); i++)
+    {
+        v3.push_back(vn[i]);
+    }
 
-    if (vp.size()<2)
+    cout<<v1.size();
+    for (int i = 0; i <v1.size(); i++)
     {
-        if (vn.size()>=2&&vp.size()==0)
-        {
-            cout<<2<<" "<<vn[vn.size()-1]<<" "<<vn[vn.size()-2]<<'\n';
-            vn.pop_back();
-            vn.pop_back();
-        }
-        else if(vp.size()==1)
-        {
-            cout<<(10000-vp[0])<<" "<<vp[0]<<'\n';
-        }
-        
+        cout<<" "<<v1[i]; 
     }
-    else
+    cout<<'\n';
+    cout<<v2.size();
+    for (int i = 0; i <v2.size(); i++)
     {
-        cout<<vp[0];
-        for (int i = 1; i < vp.size(); i++)
-        {
-            cout<<" "<<vp[i];
-        }
-        cout<<'\n';
+        cout<<" "<<v2[i]; 
     }
-    
-    if (z==0)
+    cout<<'\n';
+    cout<<v3.size();
+    for (int i = 0; i <v3.size(); i++)
     {
-        cout<<1<<" "<<0;
-        for (int i = 0; i < vn.size(); i++)
-        {
-            cout<<" "<<vn[i];
-        }
-        cout<<'\n';
+        cout<<" "<<v3[i]; 
     }
-    else
-    {
-        cout<<1;
-        for (int i = 0; i <z; i++)
-        {
-            cout<<" "<<0;
-        }
-        for (int i = 0; i < vn.size(); i++)
-        {
-            cout<<" "<<vn[i];
-        }
-        cout<<'\n';
-    }
-    
+    cout<<'\n';
 }
 
 //------------------------------------------------------------------------------
