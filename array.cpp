@@ -62,17 +62,14 @@ void solve(void)
     else if (vp.size() == 0)
     {
         cout << 1 << " " << vn[0] << '\n';
-        if (vn.size() > 3)
-            cout << 2 << " " << vn[1] << " " << vn[2]<<'\n';
-        else
-            cout << 2 << " " << 1 << '\n';
+        cout << 2 << " " << vn[1] << " " << vn[2]<<'\n';
 
         cout << 1<<" "<<0;
         for (int i = 1; i < z; i++)
         {
             cout << " " << 0;
         }
-        for (int i = 1; i < vn.size(); i++)
+        for (int i = 3; i < vn.size(); i++)
         {
             cout << " " << vn[i];
         }
