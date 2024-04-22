@@ -11,28 +11,6 @@ ll mod = 1e9 + 7;
 
 //------------------------------------------------------------------------------
 
-void solve(void)
-{
-    int n,c=0;
-    cin>>n;
-    for (int i = 2; i*i<=n; i++)
-    {
-        if (n%i==0)
-        {
-            if (isprime(i))
-            {
-                c++;
-            }
-        }
-        if (c>=2)
-        {
-            /* code */
-        }
-        
-    }
-    
-}
-
 
 //------------------------------------------------------------------------------
 int main()
@@ -40,11 +18,55 @@ int main()
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-  ll t=1;
-  //cin>>t;
-    while(t--)
-     {
-       solve();
-     }
+  int n;
+  cin>>n;
+  vector<bool>pri(n,true);
+  pri[0]=false;
+  pri[1]=false;
+  for (int i = 2; i*i<=n; i++)
+  {
+    if (pri[i])
+    {
+        for (int j = i*i; j<n; j+=i)
+        {
+            pri[j]=false;
+        }
+    }
+  }
+  int r=0;
+  for (int i = 6; i <=n; i++)
+  {
+    int f=0;
+    for (int j= 2; j*j<=i; j++)
+    {
+        if (j*j==i)
+        {
+            if (pri[j])
+            {
+                f++;
+            }
+        }
+        else
+        {
+            if (i%j==0)
+            {
+                if (pri[j])
+                {
+                    f++;
+                }
+                if (pri[i/j])
+                {
+                    f++;
+                }
+            }
+        }
+    }
+    if (f==2)
+    {
+        r++;
+    }
+    
+  }
+  cout<<r<<'\n';
 return 0;
 }
