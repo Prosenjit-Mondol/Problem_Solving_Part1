@@ -33,11 +33,11 @@ void solve(void)
     int fc=0,lc=0;
     for (int i = 0; i < n; i++)
     {
-        if (f[i]>l[i])
+        if (f[i]>=l[i])
         {
             fc++;
         }
-        else if(l[i]>f[i])
+        if(l[i]>=f[i])
         {
             lc++;
         }
