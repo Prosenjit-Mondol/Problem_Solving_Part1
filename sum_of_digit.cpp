@@ -15,42 +15,36 @@ void solve(void)
 {
     string s;
     cin>>s;
-    ll sum=0,c=0;
+    ll sum=0,c=1;
     for (int i = 0; i <s.size(); i++)
     {
         int x;
         x=s[i]-'0';
         sum+=x;
     }
-    if (sum<10)
+    if (s.length()==1)
     {
-        if (sum==0)
-        {
-            cout<<0<<'\n';
-        }
-        else
-        cout<<1<<'\n';
+        cout<<0<<'\n';
         return;
     }
     
     while (1)
     {
-        c++;
         ll st=0;
+        if (sum<10)
+        {
+           cout<<c<<'\n';
+           return;
+        }
         while (sum)
         {
             st+=(sum%10);
             sum/=10;
         }
         sum=st;
-        if (sum==1)
-        {
-            c++;
-           break;
-        }
+        c++;
         
     }
-    cout<<c<<'\n';
 }
 
 
