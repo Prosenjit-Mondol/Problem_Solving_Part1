@@ -22,20 +22,18 @@ void solve(void)
         cin>>o;
         v.push_back(o);
     }
-    for (int i = 1; i <n-1; i++)
+    for (int i =0; i <n; i++)
     {
-        if (v[i]!=v[i-1]&&v[i]!=v[i+1])
+        for (int j = i+2; j<n; j++)
         {
-            cout<<"YES"<<'\n';
-            return;
-        }
-        if (v[i]==v[i-1]&&n!=3)
-        {
-            if (v[i-2]==v[i+1]){
+            if (v[i]==v[j])
+            {
                 cout<<"YES"<<'\n';
                 return;
             }
+            
         }
+        
     }
     cout<<"NO"<<'\n';
 }
