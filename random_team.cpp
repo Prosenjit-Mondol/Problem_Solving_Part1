@@ -26,7 +26,7 @@ void solve(void)
     if (n%m==0)
     {
         rm=(mi*(mi-1))/2;
-        rm=rm*(n/m);
+        rm=rm*m;
     }
     else
     {
