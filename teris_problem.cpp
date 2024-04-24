@@ -15,23 +15,23 @@ void solve(void)
 {
     int n;
     cin>>n;
-    vector<ll>v;
+    ll sum=0;
     for(int i=0;i<n;i++)
     {
         ll o;
         cin>>o;
-        v.push_back(o);
-    }
-    for (int i = 1; i < n; i++)
-    {
-        if (v[i]<v[i-1])
+        if (o%2==0)
         {
-            cout<<"NO"<<'\n';
-            return;
+            sum++;
         }
         
     }
-     cout<<"YES"<<'\n';
+    if (sum==0||sum==n)
+    {
+        cout<<"YES"<<'\n';
+    }
+    else
+    cout<<"NO"<<'\n';
 }
 
 
