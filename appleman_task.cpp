@@ -15,40 +15,20 @@ void solve(void)
 {
     int c=0,n;
     cin>>n;
-    string s[n];
+    string s,r,x;
     for (int  i = 0; i <n; i++)
     {
-        cin>>s[i];
+        cin>>x;
+        s+=x;
     }
-    if (n==1)
-    {
-        cout<<"YES"<<'\n';
-        return;
-    }
-    
-    for (int i = 0; i <n; i++)
-    {
-        for (int j = 0; j< n-1; j++)
-        {
-            if ((s[i][j]=='o'&&s[i][j+1]=='x')||(s[i][j]=='x'&&s[i][j+1]=='o'))
-            {
-                c++;
-                break;
-                
-            }
-            
-        }
-        
-    }
-    if (c==n)
+    r=s;
+    reverse(r.begin(),r.end());
+    if (r==s)
     {
         cout<<"YES"<<'\n';
     }
     else
-    {
-        cout<<"NO"<<'\n';
-    }
-    
+    cout<<"NO"<<'\n';
 }
 
 
