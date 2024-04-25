@@ -20,15 +20,20 @@ void solve(void)
     {
         cin>>s[i];
     }
+    if (n==1)
+    {
+        cout<<"YES"<<'\n';
+        return;
+    }
+    
     for (int i = 0; i <n; i++)
     {
-        for (int j = 0; j< n; j++)
+        for (int j = 0; j< n-1; j++)
         {
-            if (s[i][j]=='o')
+            if ((s[i][j]=='o'&&s[i][j+1]=='x')||(s[i][j]=='x'&&s[i][j+1]=='o'))
             {
                 c++;
-                cout<<c<<" ";
-                continue;
+                break;
                 
             }
             
