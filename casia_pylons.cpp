@@ -15,20 +15,20 @@ void solve(void)
 {
     ll n;
     cin>>n;
-    vector<ll>v;
+    ll x=0,sum=0,sol=0;
     for(int i=0;i<n;i++)
     {
         ll o;
         cin>>o;
-        v.push_back(o);
+        sol+=(x-o);
+        if (sol<0)
+        {
+            sum+=abs(sol);
+            sol=0;
+        }
+        x=o;
     }
-    ll sum=-v[0];
-    for (int i = 1; i < n; i++)
-    {
-        sum+=(v[i-1]-v[i]);
-        cout<<sum<<" ";
-    }
-    cout<<abs(sum)<<'\n';
+    cout<<sum<<'\n';
 }
 
 
