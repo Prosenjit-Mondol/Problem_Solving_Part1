@@ -26,6 +26,7 @@ void solve(void)
     for (int i = 1; i < n; i++)
     {
         sum+=(v[i-1]-v[i]);
+        cout<<sum<<" ";
     }
     cout<<abs(sum)<<'\n';
 }
