@@ -11,15 +11,18 @@ ll mod = 1e9 + 7;
 
 //------------------------------------------------------------------------------
 const int N=1e5+10;
+vector<vector<int>>cc;//storing connecting component
+vector<int>current_cc;
 
 vector<int>g[N];
 bool vis[N];
 void dfs(int vertex){
     vis[vertex]=true;
-    cout<<vertex<<'\n';
+    current_cc.push_back(vertex);
+    //cout<<vertex<<'\n';
     for ( int child:g[vertex])
     {
-        cout<<"Par "<<vertex<<" child "<<child<<'\n';
+        //cout<<"Par "<<vertex<<" child "<<child<<'\n';
         if (vis[child])
         {
             continue;
@@ -52,10 +55,18 @@ cin.tie(NULL);
     {
         continue;
     }
+    current_cc.clear();
     dfs(i);
-    c++;
+    cc.push_back(current_cc);
   }
-  cout<<c<<'\n';
+  //cout<<cc.size()<<'\n';
+  for(auto c_cc:cc){
+    for(auto ver:c_cc){
+        cout<<ver<<" ";
+    }
+    cout<<'\n';
+  }
+  cout<<"Total connected component "<<cc.size()<<'\n';
   
 return 0;
 }
