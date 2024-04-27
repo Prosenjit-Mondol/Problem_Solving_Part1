@@ -32,15 +32,15 @@ int main()
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-   int n,m;
+   int a,b,n,m;
     cin>>n>>m;
     for (int i = 0; i < m; i++)
     {
-        int a,b;
+        
         cin>>a>>b;
         g[a].push_back(b);
         g[b].push_back(a);
     }
-    dfs(1);
+    dfs(a);
 return 0;
 }
