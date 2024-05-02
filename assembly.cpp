@@ -15,8 +15,7 @@ void solve(void)
 {
     int n;
     cin>>n;
-    int a[n];
-    vector<ll>v;
+    vector<ll>v,a(n);
     for(int i=0;i<n-1;i++)
     {
         ll o;
@@ -29,9 +28,9 @@ void solve(void)
     {
         a[i]=a[i-1]+v[i-1];
     }
-    for (int i = 0; i <n; i++)
+    for(auto element : a)
     {
-        cout<<a[i]<<" ";
+    cout<<element<<" ";
     }
     cout<<'\n';
 }
