@@ -24,18 +24,22 @@ void solve(void)
         v.push_back(o);
     }
     a[1]=v[0]+1;
-    //cout<<a[0]<<" ";
 
-
-    for (int i =2; i <n; i++)
+    for (int i = 1; i < n-1; i++)
     {
-      ll x=a[i-1];
-      
-      a[i]=x+v[i-1];
-
+      ll x=a[i];
+      while (1)
+      {
+        if (x>v[i])
+        {
+          break;
+        }
+        x+=a[i];
+      }
+      a[i+1]=x+v[i-1];
     }
-
-    a[n]=v[n-1];
+    
+    a[n]=v[n-2];
 
 
     for (int i = 1; i <=n; i++)
