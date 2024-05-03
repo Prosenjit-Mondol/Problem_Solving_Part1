@@ -30,28 +30,19 @@ void solve(void)
     for (int i =2; i <n; i++)
     {
       ll x=a[i-1];
-      cout<<v[i-1];
-      while (1)
-      {
-        if (x>v[i-1])
-        {
-          break;
-        }
-        x+=a[i-1];
-      }
-      
-      
       
       a[i]=x+v[i-1];
 
     }
+
     a[n]=v[n-1];
 
 
-    for(auto element : a)
+    for (int i = 1; i <=n; i++)
     {
-    cout<<element<<" ";
+      cout<<a[i]<<" ";
     }
+    
     cout<<'\n';
 }
 
