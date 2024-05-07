@@ -30,7 +30,7 @@ void bfs(int source){
             if(!vis[child]){
                 q.push(child);
                 vis[child]=1;
-                level[child]=level[cur]+1;
+                level[child]=level[cur]+  ;
             }
         }
         
