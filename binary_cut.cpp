@@ -28,7 +28,8 @@ void solve(void)
         cout<<2<<'\n';
         return;
     }
-    cout<<s.size()-1<<'\n';
+    int l=s.size()-1;
+    cout<<max(1,l)<<'\n';
 }
 
 
