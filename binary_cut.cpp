@@ -16,37 +16,19 @@ void solve(void)
     string s;
     set<char>st;
     cin>>s;
-    int r=0,c=0;
-    for (int i = 0; i < s.length(); i++)
+    s.erase(unique(s.begin(),s.end()),s.end());
+    //cout<<s;
+    if (s.size()==2)
     {
-        if (s[i]=='0')
+        if (s[0]=='0')
         {
-           c++;
+            cout<<1<<'\n';
         }
-        st.insert(s[i]);
+        else
+        cout<<2<<'\n';
+        return;
     }
-    if (st.size()==1)
-    {
-        cout<<1<<'\n';
-    }
-    else
-    {
-        if (s[0]=='1')
-        {
-            cout<<(c+1)<<'\n';
-            return;
-        }
-        
-        for (int i = 0; i < c; i++)
-        {
-            if (s[i]=='1')
-            {
-                r++;
-            }
-        }
-        cout<<(r+1)<<'\n';
-    }
-    
+    cout<<s.size()-1<<'\n';
 }
 
 
