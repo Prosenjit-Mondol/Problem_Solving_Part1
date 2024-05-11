@@ -31,6 +31,12 @@ void solve(void)
     }
     else
     {
+        if (s[0]=='1')
+        {
+            cout<<(c+1)<<'\n';
+            return;
+        }
+        
         for (int i = 0; i < c; i++)
         {
             if (s[i]=='1')
