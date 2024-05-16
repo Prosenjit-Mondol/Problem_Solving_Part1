@@ -24,10 +24,20 @@ void solve(void)
             cin>>x;
             if (x==0)
             {
-                p[i][j]=INT_MAX;
+                p[i][j]=999999;
             }
             else
             p[i][j]=x;
+        }
+    }
+    for (int k= 0; k<m ; k++)
+    {
+        for (int i = 0; i <m; i++)
+        {
+            for (int j = 0; j < m; j++)
+            {
+                p[i][j]=min(p[i][j],(p[i][k]+p[k][j]));
+            }
         }
     }
     cout<<"The shortest path matrix is"<<'\n';
