@@ -1,9 +1,15 @@
-#include<iostream>
+//Author  :  PROSENJIT MONDOL
+
+
 #include<bits/stdc++.h>
-#include<vector>
-#include<utility>
+#define lower(s) transform(s.begin(), s.end(), s.begin(), ::tolower);
+#define upper(s) transform(s.begin(), s.end(), s.begin(), ::toupper);
 using namespace std;
+const int inf = 3e5;
 using ll=long long ;
+ll mod = 1e9 + 7;
+
+//------------------------------------------------------------------------------
 
 void solve(void)
 {
@@ -14,26 +20,20 @@ void solve(void)
         int x;
         cin>>x;
         st.push(x);
-        //st.emplace(x*x);
     }
     cout<<st.top();
     st.pop();
     cout<<st.size();
-    cout<<st.empty();
-    stack<int>st1;
-    st1.swap(st);
-    cout<<st1.top();
-    
 }
 
 
+//------------------------------------------------------------------------------
 int main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-  int t;
-  t=1;
+  ll t=1;
   //cin>>t;
     while(t--)
      {
