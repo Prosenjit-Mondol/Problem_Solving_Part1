@@ -40,7 +40,7 @@ void solve(void)
         int la=l;
         while (v[la]!=1)
         {
-            la++;
+            la--;
         }
         ff=ff-f;
         la=l-la;
