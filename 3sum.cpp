@@ -29,19 +29,26 @@ void solve(void)
         }
         
     }
+    ll sum=0;
     for (int i = 0; i <v.size()-2; i++)
     {
         for (int j =i+1; j <v.size()-1; j++)
         {
             for (int k =j+1; k <v.size(); k++)
             {
+                sum=v[i]+v[j]+v[k];
+                if (sum%10==3)
+                {
+                    cout<<"YES"<<'\n';
+                    return;
+                }
                 
             }
             
         }
         
     }
-    
+    cout<<"NO"<<'\n';
 }
 
 
