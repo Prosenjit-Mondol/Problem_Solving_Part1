@@ -29,6 +29,18 @@ void solve(void)
         }
         
     }
+    for (int i = 0; i <v.size()-2; i++)
+    {
+        for (int j =i+1; j <v.size()-1; j++)
+        {
+            for (int k =j+1; k <v.size(); k++)
+            {
+                
+            }
+            
+        }
+        
+    }
     
 }
 
