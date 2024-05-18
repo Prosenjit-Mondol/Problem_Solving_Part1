@@ -60,12 +60,12 @@ void solve(void)
       if ((l-lg)<=(fg-f))
       {
         c+=(l-lg+1);
-        l=lg;
+        l=lg-1;
       }
       else
       {
         c+=(fg-f+1);
-        f=fg;
+        f=fg+1;
       }
     }
     //cout<<f<<" "<<l<<" ";
