@@ -57,7 +57,7 @@ void solve(void)
       {
         lg--;
       }
-      if (lg<=fg)
+      if ((l-lg)<=(fg-f))
       {
         c+=(l-lg+1);
         l=lg-1;
@@ -68,7 +68,7 @@ void solve(void)
         f=fg+1;
       }
     }
-    cout<<f<<" "<<l<<" ";
+    //cout<<f<<" "<<l<<" ";
     //cout<<c<<" ";
     sum--;
   }
