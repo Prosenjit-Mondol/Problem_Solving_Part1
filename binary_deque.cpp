@@ -59,20 +59,20 @@ void solve(void)
       }
       if (lg<=fg)
       {
-        c+=(l-lg);
+        c+=(l-lg+1);
         l=lg-1;
       }
       else
       {
-        c+=(fg-f);
+        c+=(fg-f+1);
         f=fg+1;
       }
     }
-    
-    cout<<c<<" ";
+    cout<<f<<" "<<l<<" ";
+    //cout<<c<<" ";
     sum--;
   }
-  //cout<<c<<'\n';
+  cout<<c<<'\n';
   
 }
 
