@@ -15,64 +15,30 @@ void solve(void)
 {
   int c=0,n,s,sum=0;
   cin>>n>>s;
-  vector<int>v;
-  for(int i=0;i<n;i++)
+  vector<int>v(n+1);
+  for(int i=1;i<=n;i++)
   {
       int o;
       cin>>o;
-      v.push_back(o);
-      sum+=o;
+      v[i]=v[i-1]+o;
   }
-  if (sum<s)
+  int p=0,ans=0;
+  for (int  i = 1; i <=n; i++)
   {
-    cout<<-1<<'\n';
-    return;
+    if (v[i]-v[p]<s) continue;
+    while (v[i]-v[p]>s)
+    {
+      p++;
+    }
+    ans=max(ans,i-p);
   }
-  if (sum==s)
+  if (ans>0)
   {
-    cout<<0<<'\n';
-    return;
+    cout<<n-ans<<endl;
   }
-  int f=0,l=v.size()-1;
-  while (sum>s)
-  {
-    if (v[f]==1)
-    {
-      f++;
-      c++;
-    }
-    else if (v[l]==1)
-    {
-      l--;
-      c++;
-    }
-    else
-    {
-      int fg=f,lg=l;
-      while (v[fg]!=1)
-      {
-        fg++;
-      }
-      while (v[lg]!=1)
-      {
-        lg--;
-      }
-      if ((l-lg)<=(fg-f))
-      {
-        c+=(l-lg+1);
-        l=lg-1;
-      }
-      else
-      {
-        c+=(fg-f+1);
-        f=fg+1;
-      }
-    }
-    //cout<<f<<" "<<l<<" ";
-    //cout<<c<<" ";
-    sum--;
-  }
-  cout<<c<<'\n';
+  
+  else
+  cout<<-1<<'\n';
   
 }
 
