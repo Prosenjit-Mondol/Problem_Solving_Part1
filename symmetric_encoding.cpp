@@ -21,15 +21,17 @@ void solve(void)
     for(auto it : s) st.insert(it);
     map<char,char>mp;
     for(auto it : st) ss+=it;
-    for (int j=ss.size()-1, i = 0; i <j; i++,j--)
+    for (int j=ss.size()-1, i = 0; i <=j; i++,j--)
     {
         mp[ss[i]]=ss[j];
         mp[ss[j]]=ss[i];
     }
-    for(auto&x:mp)
+    
+    for (int  i = 0; i < n; i++)
     {
-        cout<<x.second;
+        s[i]=mp[s[i]];
     }
+    cout<<s<<'\n';
 }
 
 //------------------------------------------------------------------------------
