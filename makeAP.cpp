@@ -8,28 +8,16 @@ using ll=long long ;
 
 void solve(void)
 {
-    ll a,b,c,d,r=0;
-    cin>>a>>b>>c;
-    d=abs(b-a);
-    int n=min(a,b);
-    if(c==(n+2*d))
-    r=1;
-    else
+    vector<ll>v;
+    for(int i=0;i<3;i++)
     {
-        d=abs(a-c);
-        n=min(a,c);
-        if(b==(n+d*2))
-        r=1;
-        else{
-            d=abs(b-c);
-            n=min(b,c);
-            if(a==(n+d*2))
-            r=1;
-            else
-            r=0;
-        }
+        ll o;
+        cin>>o;
+        v.push_back(o);
     }
-    if(r==1)
+    sort(v.begin(),v.end());
+    ll d=v[1]-v[0];
+    if((v[0]+2*d)%v[2]==0)
     {
         cout<<"YES"<<"\n";
     }
