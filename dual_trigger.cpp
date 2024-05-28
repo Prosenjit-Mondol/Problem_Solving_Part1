@@ -17,33 +17,25 @@ void solve(void)
     cin>>n;
     string s;
     cin>>s;
-    set<char>st;
-    for(int i=0;i<n;i++)
-    {
-    st.insert(s[i]);
-    }
-    if (st.size()==1)
-    {
-        if (n%2)
+    
+    int cn=0,f=0;
+        for(int i=0;i<n;i++)
         {
-            cout<<"NO"<<'\n';
+            if(s[i]=='1')
+                cn++;
+            if(s[i]=='1'&&s[i+1]=='1')
+            {
+                f=1;
+            }
         }
+        if(cn==2&&f==1)
+        {
+           cout<<"NO\n";
+        }
+        if(cn%2==0)
+            cout<<"YES\n";
         else
-        {
-            cout<<"YES"<<'\n';
-        }
-        return;
-    }
-    for (int i = 0; i < n-1; i++)
-    {
-        if (s[i]=='0'&&s[i+1]=='0')
-        {
-            cout<<"NO"<<'\n';
-            return;
-        }
-        
-    }
-    cout<<"YES"<<'\n';
+            cout<<"NO\n";
 }
 
 
