@@ -32,7 +32,7 @@ void solve(void)
         {
             cout<<"YES"<<'\n';
         }
-        
+        return;
     }
     for (int i = 0; i < n-1; i++)
     {
