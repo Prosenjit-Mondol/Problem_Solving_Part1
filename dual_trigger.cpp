@@ -13,29 +13,25 @@ ll mod = 1e9 + 7;
 
 void solve(void)
 {
-    int n;
-    cin>>n;
+    ll n,i,cnt=0,fl=0;
     string s;
-    cin>>s;
-    
-    int cn=0,f=0;
-        for(int i=0;i<n;i++)
+    cin>>n>>s;
+    for(i=0;i<n;i++)
+      {if(s[i]=='1')
+        {cnt++;
+       if(i+1<n)
+        if(s[i+1]=='1')
+          fl=1;
+      }}
+        if(cnt==2&&fl)
         {
-            if(s[i]=='1')
-                cn++;
-            if(s[i]=='1'&&s[i+1]=='1')
-            {
-                f=1;
-            }
+         cout<<"NO"<<'\n';
+         return;
         }
-        if(cn==2&&f==1)
-        {
-           cout<<"NO\n";
-        }
-        if(cn%2==0)
-            cout<<"YES\n";
+        if(cnt&1)
+        cout<<"NO"<<'\n';
         else
-            cout<<"NO\n";
+        cout<<"YES"<<'\n';
 }
 
 
