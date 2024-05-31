@@ -13,10 +13,14 @@ ll mod = 1e9 + 7;
 
 void solve(void)
 {
+    int n;
     string s;
-    cin>>s;
-    sort(s.begin(),s.end());
-    cout<<s;
+    cin>>n>>s;
+    if (s[0]>='a'&&s[0])
+    {
+        /* code */
+    }
+    
 }
 
 
