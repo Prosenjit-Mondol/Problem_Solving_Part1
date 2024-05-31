@@ -14,13 +14,21 @@ ll mod = 1e9 + 7;
 void solve(void)
 {
     int n;
-    string s;
+    string s,ss;
     cin>>n>>s;
-    if (s[0]>='a'&&s[0])
+    ss=s;
+    sort(s.begin(),s.end());
+    for (int i = 0; i < n; i++)
     {
-        /* code */
+        if (s[i]!=ss[i])
+        {
+            cout<<"NO"<<'\n';
+            return;
+        }
+        
     }
     
+    cout<<"YES"<<'\n';
 }
 
 
