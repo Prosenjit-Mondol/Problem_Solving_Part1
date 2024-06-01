@@ -35,12 +35,12 @@ void solve(void)
         sum+=abs(a[i]-b[i]);
         ex=min(ex,abs(a[i]-b[n]));
         ex=min(ex,abs(b[i]-b[n]));
-        if (min(a[i],b[i])<=b[n]&&b[n]>=max(a[i],b[i]))
+        if (min(a[i],b[i])<=b[n]&&b[n]<=max(a[i],b[i]))
         {
             ex=0;
         }
     }
-    cout<<ex<<" "<<(sum+1+ex)<<'\n';
+    cout<<(sum+1+ex)<<'\n';
 }
 
 
