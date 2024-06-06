@@ -22,7 +22,7 @@ void solve(void)
         cin>>c;
         mp[c]++;
     }
-    int sum=0;
+    ll sum=0;
     for (char i= 'A'; i <='G'; i++)
     {
         if ((m-mp[i])>0)
