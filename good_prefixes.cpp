@@ -37,7 +37,7 @@ void solve(void)
     for (int i = 1; i <n; i++)
     {
         ma=max(ma,v[i]);
-        if (ma==vp[i])
+        if (ma==(vp[i+1]-ma))
         {
             c++;
         }
