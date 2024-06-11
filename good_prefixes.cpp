@@ -36,7 +36,6 @@ void solve(void)
         {
             c++;
         }
-        //cout<<vp[i]<<" "<<ma<<"*";
         
     }
     cout<<c<<'\n';
