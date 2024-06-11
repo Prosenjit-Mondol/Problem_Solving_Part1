@@ -13,7 +13,13 @@ ll mod = 1e9 + 7;
 
 void solve(void)
 {
-    
+    string a,b;
+    cin>>a>>b;
+    char c;
+    c=a[0];
+    a[0]=b[0];
+    b[0]=c;
+    cout<<a<<" "<<b<<'\n';
 }
 
 
