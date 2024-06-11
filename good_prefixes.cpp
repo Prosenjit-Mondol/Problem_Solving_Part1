@@ -23,17 +23,12 @@ void solve(void)
         cin>>o;
         v.push_back(o);
         vp[i+1]=vp[i]+o;
-        if (o==0)
-        {
-            c++;
-        }
-        
     }
     ll ma=v[0];
-    // if (v[0]==0)
-    // {
-    //     c++;
-    // }
+    if (v[0]==0)
+    {
+        c++;
+    }
     for (int i = 1; i <n; i++)
     {
         ma=max(ma,v[i]);
