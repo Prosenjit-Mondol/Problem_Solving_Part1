@@ -15,7 +15,7 @@ void solve(void)
 {
     ll c=0,h=0,p=0,n,m;
     cin>>n>>m;
-    string s[n];
+    char s[n][m];
     for (int i = 0; i <n; i++)
     {
         c=0;
