@@ -13,7 +13,33 @@ ll mod = 1e9 + 7;
 
 void solve(void)
 {
+  ll x,y,z,k;
+  cin>>x>>y>>z>>k;
+  ll ans=0;
+  for (ll i = 1; i <=x; i++)
+  {
+    if (k%i==0)
+    {
+      for (ll j= 1; j<=y; j++)
+      {
+        if (k%(i*j)==0)
+        {
+          ll cur=k/(i*j);
+          if (1<=cur&&cur<=z)
+          {
+            ll r=(x-i+1)*(y-j+1)*(z-cur+1);
+            ans=max(ans,r);
+          }
+          
+        }
+        
+      }
+      
+    }
     
+  }
+
+  cout<<ans<<'\n';
 }
 
 
