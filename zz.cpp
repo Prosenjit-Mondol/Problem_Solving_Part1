@@ -1,36 +1,29 @@
-//Author  :  PROSENJIT MONDOL
+#include <iostream>
+#include <vector>
 
-
-#include<bits/stdc++.h>
-#define lower(s) transform(s.begin(), s.end(), s.begin(), ::tolower);
-#define upper(s) transform(s.begin(), s.end(), s.begin(), ::toupper);
-using namespace std;
-const int inf = 3e5;
-using ll=long long ;
-ll mod = 1e9 + 7;
-
-//------------------------------------------------------------------------------
-
-void solve(void)
-{
-    string s;
-    cin>>s;
-    sort(s.begin(),s.end());
-    cout<<s;
+// Function to generate the array
+std::vector<int> generateArray(int N) {
+    std::vector<int> A(N, 1);
+    return A;
 }
 
+// Function to print the array
+void printArray(const std::vector<int>& A) {
+    for (int i = 0; i < A.size(); i++) {
+        std::cout << A[i] << " ";
+    }
+    std::cout << std::endl;
+}
 
-//------------------------------------------------------------------------------
-int main()
-{
-ios_base::sync_with_stdio(false);
-cin.tie(NULL);
+int main() {
+    int N;
+    std::cout << "Enter an odd integer N: ";
+    std::cin >> N;
 
-  ll t=1;
-  cin>>t;
-    while(t--)
-     {
-       solve();
-     }
-return 0;
+    std::vector<int> A = generateArray(N);
+
+    std::cout << "Generated array: ";
+    printArray(A);
+
+    return 0;
 }
