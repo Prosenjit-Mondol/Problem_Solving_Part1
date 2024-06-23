@@ -13,7 +13,13 @@ ll mod = 1e9 + 7;
 
 void solve(void)
 {
-    
+    ll a,b,c;
+    cin>>a>>b>>c;
+    ll ans=999999999;
+    ans=min(ans,(abs(b-a)+abs(c-a)));
+    ans=min(ans,(abs(b-a)+abs(c-b)));
+    ans=min(ans,(abs(b-c)+abs(c-a)));
+    cout<<ans<<'\n';
 }
 
 
@@ -24,7 +30,7 @@ ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
   ll t=1;
-  //cin>>t;
+  cin>>t;
     while(t--)
      {
        solve();
