@@ -23,15 +23,12 @@ void solve(void)
        mp[x]++;
     }
     ll f=0,ans=0;
-    for(auto&x:mp)
+    for (int i = 1; i <=1e4+9; i++)
     {
-        if (ans<x.second)
-        {
-            ans=x.second;
-            f=x.first;
-        }
+        f=mp[i]+mp[i+1];
+        ans=max(ans,f);
     }
-    ans+=max(mp[f-1],mp[f+1]);
+    
     cout<<ans<<'\n';
 }
 
