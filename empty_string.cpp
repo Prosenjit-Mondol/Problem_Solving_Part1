@@ -16,16 +16,17 @@ void solve(void)
     string s;
     cin>>s;
     int l=s.length();
-    int a=0;
+    int b=0,a=0;
     for (int i = 0; i <l; i++)
     {
         if (s[i]=='a')
         {
             a++;
         }
-        
+        else
+        b++;
     }
-    if (a==l/2)
+    if (a==b)
     {
         cout<<"YES"<<'\n';
     }
