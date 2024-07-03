@@ -27,6 +27,7 @@ void solve(void)
     ll c=n;
     for (int i = 0; i <n-1; i++)
     {
+        cout<<'p';
         x=v[i]|v[i+1];
         if (mp[x]==0)
         {
@@ -36,6 +37,7 @@ void solve(void)
 
         for (int j= i+2;j<n; j++)
         {
+            cout<<'q';
             x=x|v[j];
             if (mp[x]==0)
             {
