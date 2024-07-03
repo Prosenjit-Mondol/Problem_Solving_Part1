@@ -15,16 +15,6 @@ void solve(void)
 {
     ll n,m;
     cin>>n>>m;
-    if (n>m)
-    {
-        n--;
-    }
-    else
-    {
-        m--;
-    }
-    ll r=(n*m)/__gcd(n,m);
-    cout<<r<<'\n';
 }
 
 
