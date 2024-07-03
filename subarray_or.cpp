@@ -13,7 +13,7 @@ ll mod = 1e9 + 7;
 
 void solve(void)
 {
-    ll n;
+    ll x,n;
     cin>>n;
     map<ll,ll>mp;
     vector<ll>v;
@@ -25,19 +25,29 @@ void solve(void)
         mp[o]++;
     }
     ll c=n;
-    for (int i = 0; i <n; i++)
+    for (int i = 0; i <n-1; i++)
     {
-        for (int j= i+1;j<n; j++)
+        x=v[i]|v[i+1];
+        if (mp[x]==0)
         {
-            ll x=v[i]|v[j];
+            c++;
+            mp[x]=1;
+        }
+
+        for (int j= i+2;j<n; j++)
+        {
+            x=x|v[j];
             if (mp[x]==0)
             {
                 c++;
                 mp[x]=1;
             }
-            
         }
-        
+        x=0;
+    }
+    for(auto&x:mp)
+    {
+        cout<<x.first<<" "<<x.second<<'\n';
     }
     cout<<c<<'\n';
 }
