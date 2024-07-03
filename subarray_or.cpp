@@ -45,10 +45,6 @@ void solve(void)
         }
         x=0;
     }
-    for(auto&x:mp)
-    {
-        cout<<x.first<<" "<<x.second<<'\n';
-    }
     cout<<c<<'\n';
 }
 
