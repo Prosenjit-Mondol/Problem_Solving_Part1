@@ -33,7 +33,7 @@ void solve(void)
     }
     if (ma+c>=n)
     {
-        cout<<(n-k)<<'\n';
+        cout<<(n-ma)<<'\n';
         return;
     }
     ma+=c;
@@ -41,18 +41,19 @@ void solve(void)
     sort(v.begin(),v.end());
     for (int i = 0; i <k-1; i++)
     {
-        if (ma+v[i]<n)
+        if ((ma+v[i])<n)
         {
              r=r+(2*v[i]-1);
              ma+=v[i];
         }
+        else if ((ma+v[i])==n)
+        {
+            r=r+(2*v[i]-1);
+            cout<<r<<'\n';
+            return;
+        }
         else
         {
-            if (n-ma==v[i])
-            {
-                r=r-1+(n-ma)*2;
-            }
-            else
             r=r+(n-ma)*2;
             cout<<r<<'\n';
             return;
