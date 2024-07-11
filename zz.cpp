@@ -12,23 +12,10 @@ ll mod = 1e9 + 7;
 
 void solve(void)
 {
-  stack<string> st;
-  st.push("(");
-  cout << st.size() << '\n';
-  while (st.size() != 0)
-  {
-    string x;
-    cin >> x;
-    if (x == "(")
-    {
-      st.push("(");
-    }
-    if (x == ")")
-    {
-
-      st.pop();
-    }
-  }
+  char c;
+  int m;
+  cin>>c>>m;
+  cout<<c<<m;
 }
 
 //------------------------------------------------------------------------------
