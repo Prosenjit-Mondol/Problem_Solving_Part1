@@ -11,24 +11,31 @@ ll mod = 1e9 + 7;
 
 //------------------------------------------------------------------------------
 
-
-void TH(int n,int from,int aux,int to){
-    if (n==0)
-    {
-        return;
-    }
-    TH(n-1,from,to,aux);
-    cout<<from<<" "<<to<<'\n';
-    TH(n-1,aux,from,to);
-}
 void solve(void)
 {
-    int n;
-    cin>>n;
-    
-    cout<<(1<<n)-1<<'\n';
-
-    TH(n,1,2,3);
+    char info[12];
+    int link[12];
+    int start=9;
+    info[3]='o';
+    link[3]=6;
+    info[4]='t';
+    link[4]=0;
+    info[6]=' ';
+    link[6]=11;
+    info[7]='x';
+    link[7]=10;
+    info[9]='n';
+    link[9]=3;
+    info[10]='i';
+    link[10]=4;
+    info[11]='e';
+    link[11]=7;
+    while (start!=0)
+    {
+        cout<<info[start];
+        start=link[start];
+    }
+    cout<<'\n';
 }
 
 

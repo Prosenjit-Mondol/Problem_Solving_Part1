@@ -10,25 +10,23 @@ using ll=long long ;
 ll mod = 1e9 + 7;
 
 //------------------------------------------------------------------------------
+int fib(int n){
 
-
-void TH(int n,int from,int aux,int to){
-    if (n==0)
+    if (n==0||n==1)
     {
-        return;
+        return n;
     }
-    TH(n-1,from,to,aux);
-    cout<<from<<" "<<to<<'\n';
-    TH(n-1,aux,from,to);
+    return (fib(n-2) + fib(n-1));
 }
 void solve(void)
 {
     int n;
     cin>>n;
+    for (int i = 0; i < n; i++)
+    {
+        cout<<fib(i)<<" ";
+    }
     
-    cout<<(1<<n)-1<<'\n';
-
-    TH(n,1,2,3);
 }
 
 

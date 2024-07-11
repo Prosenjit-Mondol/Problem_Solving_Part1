@@ -11,24 +11,33 @@ ll mod = 1e9 + 7;
 
 //------------------------------------------------------------------------------
 
-
-void TH(int n,int from,int aux,int to){
-    if (n==0)
-    {
-        return;
-    }
-    TH(n-1,from,to,aux);
-    cout<<from<<" "<<to<<'\n';
-    TH(n-1,aux,from,to);
-}
 void solve(void)
 {
     int n;
     cin>>n;
-    
-    cout<<(1<<n)-1<<'\n';
-
-    TH(n,1,2,3);
+    vector<ll>v;
+    for(int i=0;i<n;i++)
+    {
+        ll o;
+        cin>>o;
+        v.push_back(o);
+    }
+    for (int i = 0; i <n; i++)
+    {
+        for (int j= 1; j <n; j++)
+        {
+            if (v[j-1]>v[j])
+            {
+                swap(v[j-1],v[j]);
+            }
+            
+        }
+        
+    }
+    for(auto element : v)
+    {
+    cout<<element<<" ";
+    }
 }
 
 
