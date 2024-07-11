@@ -16,7 +16,8 @@
         "*.tcc": "cpp",
         "unordered_map": "cpp",
         "unordered_set": "cpp",
-        "map": "cpp"
+        "map": "cpp",
+        "list": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
