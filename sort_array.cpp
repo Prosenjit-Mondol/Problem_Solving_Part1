@@ -14,47 +14,28 @@ ll mod = 1e9 + 7;
 void solve(void)
 {
     int n;
-    cin>>n;
-    vector<ll>v,s;
-    for(int i=0;i<n;i++)
-    {
-        ll o;
-        cin>>o;
-        v.push_back(o);
-        s.push_back(o);
+    cin >> n;
+    vector<ll>v(n),st(n);
+    for(auto &in:v) cin>>in;
+    st=v;
+    sort(st.begin(),st.end());
+    ll l, r;
+    for(l=0;l<n;l++){
+        if(v[l] != st[l])break;
     }
-    sort(v.begin(),v.end());
-    int f,l,c=0;
-    for (int i = 0; i < n; i++)
-    {
-        if (v[i]!=s[i])
-        {
-            c++;
-            if (f)
-            {
-                l=i+1;
-            }
-            else
-            {
-                f=i+1;
-            }
-            
-        }
-        
+    for(r=n-1; r>=0;r--){
+ 
+        if(v[r] != st[r])break;
     }
-    if (c==0)
-    {
-        cout<<"yes"<<'\n'<<1<<" "<<1<<'\n';
+    if(l == n && r+1==0){
+        cout<<"yes"<<endl<<"1"<<" 1" << endl;
+        return;
     }
-    else if (c==2)
+    for(ll i=l;i<r;i++)
     {
-        cout<<"yes"<<'\n'<<f<<" "<<l<<'\n';
+        if(v[i]<v[i+1]) {cout<<"no"<<endl;return;}
     }
-    else
-    {
-        cout<<"no"<<'\n';
-    }
-    
+    cout<<"yes"<<endl<<l+1<<" "<<r+1<<endl;
 }
 
 
