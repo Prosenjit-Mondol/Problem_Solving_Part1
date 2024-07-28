@@ -20,7 +20,6 @@ void solve(void)
         ll o;
         cin >> o;
         v.push_back(o);
-        sum += o;
     }
     r = v;
     for (auto element : v)
@@ -36,15 +35,18 @@ void solve(void)
         p.push_back(a);
         r.clear();
         sum = 0;
-        for (int i = 0; i < v.size(); i++)
+        while (v.size())
         {
-            if (abs(a - v[i]))
-                ;
+            for (int i = 0; i < v.size(); i++)
             {
-                r[r.size()] = abs(a - v[i]);
-                sum += abs(a - v[i]);
+                if (abs(a - v[i]))
+                    ;
+                {
+                    r[r.size()] = abs(a - v[i]);
+                    sum += abs(a - v[i]);
+                }
+                s.insert(abs(a - v[i]));
             }
-            s.insert(abs(a - v[i]));
         }
         c++;
         v.clear();
