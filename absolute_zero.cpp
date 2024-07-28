@@ -21,7 +21,6 @@ void solve(void)
         cin >> o;
         v.push_back(o);
     }
-    r = v;
     for (auto element : v)
     {
         cout << element << " ";
