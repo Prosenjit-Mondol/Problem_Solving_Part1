@@ -13,7 +13,26 @@ ll mod = 1e9 + 7;
 
 void solve(void)
 {
+    ll sum=0,n;
+    cin>>n;
 
+    stack<ll>st;
+    for (ll i = 1; i <=n; i++)
+    {
+        char x;
+        cin>>x;
+        if (x=='_'||x=='(')
+        {
+            st.push(i);
+        }
+        else
+        {
+            sum+=(i-st.top());
+            st.pop();
+        }
+        
+    }
+    cout<<sum<<'\n';
 }
 
 
