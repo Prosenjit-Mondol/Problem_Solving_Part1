@@ -54,6 +54,19 @@ void solve(void)
         }
         
     }
+    if (c==0)
+    {
+        if (s[s.length()-1]=='z')
+            {
+                cout<<'a';
+            }
+            else
+            {
+                char x=s[s.length()-1]+1;
+                cout<<x;
+            }
+    }
+    
     cout << '\n';
 
 
