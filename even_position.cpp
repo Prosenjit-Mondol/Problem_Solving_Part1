@@ -27,6 +27,7 @@ void solve(void)
         }
         else
         {
+            cout<<i<<" "<<st.top()<<'\n';
             sum+=(i-st.top());
             st.pop();
         }
