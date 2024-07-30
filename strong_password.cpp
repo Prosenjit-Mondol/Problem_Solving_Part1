@@ -14,22 +14,36 @@ ll mod = 1e9 + 7;
 void solve(void)
 {
     string s;
+    int c=0;
     cin>>s;
-    map<char,int>mp;
+    if (s.length()==1)
+    {
+        if (s=="z")
+        {
+            cout<<"az"<<'\n';
+        }
+        else
+        {
+            char x=s[0]+1;
+            cout<<s<<x<<'\n';
+        }
+        return;
+    }
     for (int i = 0; i <s.length(); i++)
     {
-        mp[s[i]]++;
-    }
-    for (char i = 'a'; i <='z'; i++)
-    {
-        if (mp[i]==0)
+        if (c==0&&s[i]==s[i+1])
         {
-           cout<<i;
-           break;
+            char x=s[i]+1;
+            cout<<s[i]<<x;
+            c=1;
+        }
+        else
+        {
+            cout<<s[i];
         }
         
     }
-    cout<<s<<'\n';
+    cout<<'\n';
 }
 
 
