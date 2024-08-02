@@ -6,7 +6,7 @@
 #define upper(s) transform(s.begin(), s.end(), s.begin(), ::toupper);
 using namespace std;
 const int inf = 3e5;
-using ll=long long ;
+using ll=long long int;
 ll mod = 1e9 + 7;
 
 //------------------------------------------------------------------------------
@@ -30,7 +30,7 @@ void solve(void)
         {
             mp[b[j]]--;
         }
-        
+
         ll sum=0;
         for(auto&x:mp)
         {
