@@ -16,28 +16,26 @@ void solve(void)
     ll n,q;
     string a,b;
     cin>>n>>q>>a>>b;
+    vector<array<int,26>>v(n+1);
+    for (int i = 0; i < n; i++)
+    {
+        v[i+1]=v[i];
+        v[i+1][a[i]-'a']++;
+        v[i+1][b[i]-'a']--;
+    }
+
+    
+
     for (int i = 0; i < q; i++)
     {
-        ll l,u;
+        ll ans=0,l,u;
         cin>>l>>u;
-        map<char,int>mp;
-        for (int j = l-1; j< u; j++)
+        l--;
+        for (int i = 0; i < 26; i++)
         {
-            mp[a[j]]++;
+            ans+=max(0,v[u][i]-v[l][i]);
         }
-        
-        for (int j = l-1; j< u; j++)
-        {
-            mp[b[j]]--;
-        }
-
-        ll sum=0;
-        for(auto&x:mp)
-        {
-            if(x.second>0)
-            sum+=x.second;
-        }
-        cout<<sum<<'\n';
+        cout<<ans<<'\n';
     }
     
 }
