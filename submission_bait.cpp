@@ -15,40 +15,24 @@ void solve(void)
 {
     int n;
     cin>>n;
-    vector<ll>v;
-    for(int i=0;i<n;i++)
+    
+    map<int,int>mp;
+    for (int i = 0; i < n; i++)
     {
-        ll o;
-        cin>>o;
-        v.push_back(o);
+        int x;
+        cin>>x;
+
+        mp[x]++;
     }
-    int mx=v[0];
-    bool r=true;
-    for (int i =1; i < n; i++)
+    for(auto&x:mp)
     {
-        if (mx>v[i])
+        if (x.second%2)
         {
-            break;
-        }
-        else if(mx<v[i])
-        {
-            if (r)
-            {
-                r=false;
-            }
-            else
-            {
-                r=true;
-            }
-            
+            cout<<"YES"<<'\n';
+            return;
         }
         
     }
-    if (r)
-    {
-        cout<<"YES"<<'\n';
-    }
-    else
     cout<<"NO"<<'\n';
 }
 
